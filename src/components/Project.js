@@ -13,7 +13,7 @@ function Project() {
     const portdata = [
         {
             img: port4,
-            des: "Designing and implementing the front-end using Reactjs, HTML5, CSS3, Bootstrap, and Javascript, also implementing events & functions and Moralis for store NFT data",
+            des: "Designing and implementing the front-end using Reactjs, HTML5, CSS3, Bootstrap, and Javascript, also implementing events & functions and Moralis for storing NFT data.",
             title: "NFT Marketplace (CSDoge)",
             url: "https://nftartland.xyz/",
             test:false,
