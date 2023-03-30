@@ -21,7 +21,7 @@ function Project() {
         },
         {
             img: port1,
-            des: "Designing and implementing the front-end using Reactjs, HTML5, CSS3, Bootstrap, and Javascript, and also implementing events & functions",
+            des: "Designing and implementing the front-end using Reactjs, HTML5, CSS3, Bootstrap, and Javascript, and also implementing events & functions.",
             title: "CSDOGE TOKEN SHOP",
             url: "https://grub.csdoge.club/",
             test:false,
@@ -29,7 +29,7 @@ function Project() {
         },
         {
             img: port13,
-            des: "Designing and implementing the front-end using Reactjs, HTML5, CSS3, Bootstrap, and Javascript, and also implementing events & functions",
+            des: "Designing and implementing the front-end using Reactjs, HTML5, CSS3, Bootstrap, and Javascript, and also implementing events & functions.",
             title: "NFT App (EVERGROW)",
             url: "https://clever-kowalevski-83de60.netlify.app/",
             test:true,
@@ -37,7 +37,7 @@ function Project() {
         },
         {
             img: port17,
-            des: "Design and developed a POS web application using Reactjs,Redux HTML5, CSS3,Javascript,BootStrap,react-chartjs,NodeJS,ExpressJS ,MongoDB , Firebase for google auth.",
+            des: "Designed and developed a POS web application using Reactjs, Redux HTML5, CSS3, Javascript, BootStrap, react-charts, NodeJS, ExpressJS, MongoDB, and Firebase for google auth.",
             title: "POS WEB APP",
             url: "https://poswebapp.netlify.app/",
             test:false,

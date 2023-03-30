@@ -12,7 +12,7 @@ const servicelist = [
     {
         logo:<MdOutlineAppRegistration/>,
         title:"Cross-platform App Development",
-        des:'Cross-platform App Development services includes fast, bug-free & well-documented mobile applications that will work across multiple platforms and operating systems (Android and Apple devices) .'
+        des:'Cross-platform App Development services include fast, bug-free & well-documented mobile applications that will work across multiple platforms and operating systems (Android and Apple devices). '
 
     },
     {
