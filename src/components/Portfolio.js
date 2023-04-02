@@ -18,6 +18,7 @@ import port16 from './img/port22.png'
 import port17 from './img/port23.png'
 import port18 from './img/port24.png'
 import port19 from './img/port25.png'
+import port20 from './img/port26.png'
 import { BsArrowDownCircleFill,BsArrowUpCircleFill ,BsFillArrowUpRightCircleFill } from "react-icons/bs";
 function Portfolio() {
     const [num,setnum] = useState(8)
@@ -53,8 +54,8 @@ function Portfolio() {
         {
             img: port16,
            
-            des: " Artificial Intelligence News App",
-            title: "AI NEWS WEB APP",
+            des: " 3D customization tool",
+            title: "Customized T-Shirt",
             url: "https://taupe-lamington-8e2a4b.netlify.app/",
             button:"Open Website"
         },
@@ -70,6 +71,14 @@ function Portfolio() {
             des: "(Car Rental Web App)",
             title: "Cariva",
             url: "https://carbbook.netlify.app/",
+            button:"Open Website"
+        },
+        {
+            img: port16,
+           
+            des: " Artificial Intelligence News App",
+            title: "AI NEWS WEB APP",
+            url: "https://taupe-lamington-8e2a4b.netlify.app/",
             button:"Open Website"
         },
         {
