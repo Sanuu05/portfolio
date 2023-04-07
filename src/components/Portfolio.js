@@ -34,7 +34,7 @@ function Portfolio() {
             img: port1,
             des: "(Multi-Cuisine Resturant)",
             title: "Foodooze",
-            url: "https://foodooze.netlify.app/",
+            url: "https://foodzooe.netlify.app/",
             button:"Open Website"
         },
         {
