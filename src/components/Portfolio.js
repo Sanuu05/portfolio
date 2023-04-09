@@ -19,9 +19,10 @@ import port17 from './img/port23.png'
 import port18 from './img/port24.png'
 import port19 from './img/port25.png'
 import port20 from './img/port26.png'
+import port21 from './img/port27.png'
 import { BsArrowDownCircleFill,BsArrowUpCircleFill ,BsFillArrowUpRightCircleFill } from "react-icons/bs";
 function Portfolio() {
-    const [num,setnum] = useState(8)
+    const [num,setnum] = useState(12)
     const portdata = [
         {
             img: port4,
@@ -80,6 +81,30 @@ function Portfolio() {
             url: "https://youtubecln.netlify.app/",
             button:"Open Website"
         },
+     
+        {
+            img: port18,
+            des: "(Social Media Website)",
+            title: "Blogy Mobile Website",
+            url: "https://main.dr30mpnwomywz.amplifyapp.com/",
+            button:"Open Website"
+        },
+       
+      
+        {
+            img: port21,
+            des: "EMI calculator for Car,House ,Insurance or any with down payment(if any) ",
+            title: "EMI Calculator",
+            url: "https://friendly-leakey-dc1395.netlify.app/",
+            button:"Open Website"
+        },
+        {
+            img: port6,
+            des: "Chatting Web App",
+            title: "Messager",
+            url: "https://messager.netlify.app/",
+            button:"Open Website"
+        },
         {
             img: port16,
            
@@ -96,41 +121,13 @@ function Portfolio() {
             button:"Open Website"
         },
         {
-            img: port18,
-            des: "(Social Media Website)",
-            title: "Blogy Mobile Website",
-            url: "https://main.dr30mpnwomywz.amplifyapp.com/",
-            button:"Open Website"
-        },
-       
-        {
             img: port8,
             des: "(Cake Shop)",
             title: "CakeWorld",
             url: "https://cakeworldn.netlify.app/",
             button:"Open Website"
         },
-        // {
-        //     img: port12,
-        //     des: "(Instagram Clone)",
-        //     title: "Instagram",
-        //     url: "https://friendly-leakey-dc1395.netlify.app/",
-        //     button:"Open Website"
-        // },
-        {
-            img: port6,
-            des: "Chatting Web App",
-            title: "Messager",
-            url: "https://messager.netlify.app/",
-            button:"Open Website"
-        },
-        {
-            img: port2,
-            des: "(A bed and breakfast (typically shortened to B&B or BnB))",
-            title: "Nestled Inn",
-            url: "https://fervent-hypatia-2c1f75.netlify.app/",
-            button:"Open Website"
-        },
+       
     
         {
             img: port10,
@@ -147,7 +144,13 @@ function Portfolio() {
             url: "https://gallant-volhard-b773fe.netlify.app/",
             button:"Open Website"
         },
-        
+        {
+            img: port2,
+            des: "(A bed and breakfast (typically shortened to B&B or BnB))",
+            title: "Nestled Inn",
+            url: "https://fervent-hypatia-2c1f75.netlify.app/",
+            button:"Open Website"
+        },
         {
             img: port11,
             des: "(Interior Design website)",
@@ -175,12 +178,12 @@ function Portfolio() {
                 <div className='row portfoliorow'>
                     {
                         portdata?.slice(0,num).map((v, i) => {
-                            return <div className='col-md-6 col-12 mt-4' data-aos="zoom-in-up" data-aos-duration="1000"> 
+                            return <div className='col-md-6 col-xl-4 col-12 mt-4' data-aos="zoom-in-up" data-aos-duration="1000"> 
                                 <div className='portcard'>
                                     <img src={v?.img} className='img-fluid' alt='port'/>
                                     <div className='detail'>
-                                        <h2>{v?.title}</h2>
-                                        <p>{v.des}</p>
+                                        <h2 style={{textAlign:'center'}}>{v?.title}</h2>
+                                        <p style={{textAlign:'center'}}>{v.des}</p>
                                         <a href={v?.url} target="_blank">
                                         <button className='mt-2'>{v?.button} <BsFillArrowUpRightCircleFill/></button>
                                         </a>
@@ -194,10 +197,10 @@ function Portfolio() {
                     }
                     <div className='portbtn'>
                         {
-                            portdata?.length<=num?null:<BsArrowDownCircleFill className='mx-2' onClick={()=>setnum(num+2)}/>
+                            portdata?.length<=num?null:<BsArrowDownCircleFill className='mx-2' onClick={()=>setnum(num+6)}/>
                         }
                         {
-                            num>6?<BsArrowUpCircleFill className='mx-2' onClick={()=>setnum(num-2)}/>:null
+                            num>6?<BsArrowUpCircleFill className='mx-2' onClick={()=>setnum(num-6)}/>:null
                         }
                     
                     
