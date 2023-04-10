@@ -42,7 +42,7 @@ function Portfolio() {
             img: port13,
             des: "(Multi-Cuisine Resturant)",
             title: "Foodooze Mobile App",
-            url: "https://expo.dev/@devohut/Foodooze/",
+            url: "https://expo.dev/@devohut/foodapp",
             button:"Open App"
         },
         {
