@@ -86,7 +86,7 @@ function Portfolio() {
             img: port18,
             des: "(Social Media Website)",
             title: "Blogy Mobile Website",
-            url: "https://main.dr30mpnwomywz.amplifyapp.com/",
+            url: "https://twittexr.netlify.app/",
             button:"Open Website"
         },
        
