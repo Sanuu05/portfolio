@@ -95,13 +95,13 @@ function Portfolio() {
             img: port21,
             des: "EMI calculator for Car,House ,Insurance or any with down payment(if any) ",
             title: "EMI Calculator",
-            url: "https://friendly-leakey-dc1395.netlify.app/",
+            url: "https://emicalcu.netlify.app/",
             button:"Open Website"
         },
         {
             img: port6,
             des: "Chatting Web App",
-            title: "Messager",
+            title: "Messenger",
             url: "https://messager.netlify.app/",
             button:"Open Website"
         },
