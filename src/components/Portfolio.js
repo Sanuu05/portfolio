@@ -20,6 +20,7 @@ import port18 from './img/port24.png'
 import port19 from './img/port25.png'
 import port20 from './img/port26.png'
 import port21 from './img/port27.png'
+import port22 from './img/port28.png'
 import { BsArrowDownCircleFill,BsArrowUpCircleFill ,BsFillArrowUpRightCircleFill } from "react-icons/bs";
 function Portfolio() {
     const [num,setnum] = useState(12)
@@ -53,11 +54,11 @@ function Portfolio() {
             button:"Open App"
         },
         {
-            img: port20,
+            img: port21,
            
             des: " 3D customization tool",
-            title: "Customized T-Shirt",
-            url: "https://silver-donut-02b056.netlify.app/",
+            title: "Shoe Customization",
+            url: "https://visionary-boba-2bf892.netlify.app/",
             button:"Open Website"
         },
         {
@@ -142,6 +143,14 @@ function Portfolio() {
             des: "(Burger Resturant)",
             title: "Burgery",
             url: "https://gallant-volhard-b773fe.netlify.app/",
+            button:"Open Website"
+        },
+        {
+            img: port20,
+           
+            des: " 3D customization tool",
+            title: "Customized T-Shirt",
+            url: "https://silver-donut-02b056.netlify.app/",
             button:"Open Website"
         },
         {
