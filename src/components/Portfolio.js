@@ -230,7 +230,8 @@ function Portfolio() {
                 <div className='row portfoliorow'>
                     {
                         portdata?.slice(0,num).map((v, i) => {
-                            return <div className='col-md-6 col-xl-4 col-12 mt-4' data-aos="zoom-in-up" data-aos-duration="1000"> 
+                            return  <div className='col-md-6 col-xl-4 col-12 mt-4 px-md-3'>
+                             <div className='portmaincard' style={{backgroundColor:'#161c18'}} data-aos="zoom-in-up" data-aos-duration="1000"> 
                                 <div className='portcard'>
                                     <img src={v?.img} className='img-fluid' alt='port'/>
                                     <div className='detail'>
@@ -247,13 +248,14 @@ function Portfolio() {
                                     {v?.skills?.map((v)=>{
                                         return <div className='px-2 d-flex flex-column justify-content-center align-items-center'>
 
-                                         <img src={v?.img} className='img-fluid' style={{width:'30px',height:'30px'}} alt='port'/>
+                                         <img src={v?.img} className='img-fluid' style={{width:'35px',height:'35px'}} alt='port'/>
                                          <p style={{color:'white',fontSize:'12px',marginTop:'5px',textAlign:'center'}}>{v.name}</p>
                                          </div>
                                     })}
 
                                     </div>
 
+                            </div>
                             </div>
                         })
                     }

@@ -745,6 +745,9 @@ input, textarea{
   margin-top: 15px;
   margin: 10px;
 }
+.portmaincard{
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
 .skills .skillcard .skimg{
   height: 100px;
   display: flex;
@@ -899,7 +902,7 @@ input, textarea{
   font-weight: bold;
 }
 .portfoliorow{
-  padding: 20px 80px;
+  padding: 20px 60px;
   
 }
 .portfolio .portcard{
@@ -928,7 +931,7 @@ input, textarea{
   color: white;
   /* display: none; */
   opacity: 0;
-  transition: 1s all;
+  transition: 0.5s all;
   z-index: 2;
   
 }
@@ -951,18 +954,22 @@ input, textarea{
   font-weight: bold;
 
 }
-.portfolio .portcard:hover> img{
+.portfolio .portmaincard:hover>.portcard img{
   opacity: 0;
   /* display: none; */
   /* width: 0; */
   /* height: 0; */
 }
-.portfolio .portcard:hover> .detail{
+.portfolio .portmaincard:hover>.portcard .detail{
   /* opacity: 0; */
   display: flex;
   opacity: 1;
+  background-color:#161c18;
 }
-.portfolio .portcard:hover{
+.portfolio .portmaincard{
+  transition: 1s ease-in-out;
+}
+.portfolio .portmaincard:hover{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .portfolio .portbtn{
