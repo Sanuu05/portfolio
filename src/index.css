@@ -22,8 +22,6 @@ font-family: 'Ubuntu', sans-serif;
   width: 100%;
   padding: 15px 10px;
   background-color: transparent;
-  /* z-index: 99; */
-  /* position: fixed; */
   transition: 0.8s all;
   color: black!important;
   font-family: 'Architects Daughter', cursive;
@@ -109,12 +107,9 @@ nav ul .active a:before{
 }
 .snav ul li a:hover:before{
   width: 100%;
-  /* background-color: rgba(0, 183, 255, 0.514); */
+ 
 }
-/* .snav ul li a:hover::after{
-  width: 100%;
-  background-color: rgba(0, 183, 255, 0.514);
-} */
+
 
 
 .navbarr{

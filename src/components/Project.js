@@ -16,6 +16,7 @@ function Project() {
             des: "Designing and implementing the front-end using Reactjs, HTML5, CSS3, Bootstrap, and Javascript, also implementing events & functions and Moralis for storing NFT data.",
             title: "NFT Marketplace (CSDoge)",
             url: "https://nftartland.xyz/",
+            note:'Open wallet app, log in, display NFTs.',
             test:false,
             button:"Open Website"
         },
@@ -60,7 +61,7 @@ function Project() {
                                     <img src={v?.img} className='img-fluid' alt='port'/>
                                     <div className='detail'>
                                         <h2 style={{textAlign:'center'}}>{v?.title} {v?.test?<p style={{textAlign:'center'}}>(Testing)</p>:null}</h2>
-                                        <p>{v.des}</p>
+                                        <p style={{textAlign:'center'}}>{v.des}</p>
                                         <a href={v?.url} target="_blank">
                                         <button className='mt-2'>{v?.button} <BsFillArrowUpRightCircleFill/></button>
                                         </a>
@@ -68,6 +69,7 @@ function Project() {
                                     </div>
 
                                 </div>
+                                <p style={{color:'white',marginTop:'10px',fontSize:15,fontWeight:'bold',letterSpacing:'1px'}}>{v?.note}</p>
 
                             </div>
                         })

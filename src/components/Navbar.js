@@ -10,17 +10,6 @@ function Navbar() {
     const [change, setchange] = useState(false)
     const [menu, setmenu] = useState(false)
     useEffect(() => {
-        //     const menuBtn = document.querySelector('.menu-btn');
-        // let menuOpen = false;
-        // menuBtn.addEventListener('click', () => {
-        //   if (!menuOpen) {
-        //     menuBtn.classList.add('open');
-        //     menuOpen = true;
-        //   } else {
-        //     menuBtn.classList.remove('open');
-        //     menuOpen = false;
-        //   }
-        // });
         $('.menu-btn').click(function () {
             
             if (menu === true) {
@@ -56,8 +45,6 @@ function Navbar() {
             let current = "";
             sections.forEach(section => {
                 const sectop = section.offsetTop;
-                // console.log(sectop)
-                // const secheight = section.clientHeight;
                 if (window.pageYOffset > sectop) {
                     current = section.getAttribute('id')
                 }
@@ -106,9 +93,6 @@ function Navbar() {
 
                     <div className="left_nav">
                         <a href="/#">
-                            {
-                                // change ? <img src={logo} alt="ss" /> : <img src={logo1} alt="ss" />
-                            }
                             <img src={logo} alt='SS' className='logo navitem' />
                         </a>
                     </div>
@@ -129,14 +113,6 @@ function Navbar() {
 
                             </ul>
                         </div>
-
-
-
-
-                        {/* <div className="menu">
-                                <FiMenu className="mbtn" />
-                                <FiX style={{ color: "red" }} className="xbtm" />
-                            </div> */}
                         <div class="menu-btn" onClick={() => setmenu(!menu)}>
                             <div class={change?"menu-btn__burgerone":"menu-btn__burger"} ></div>
                         </div>

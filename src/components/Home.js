@@ -23,13 +23,7 @@ function Home() {
                 duration: 1,
                 ease: 'Expo.easeInOut',
             }, '-=2')
-            // .from('#r1', {
-            //     duration: 1,
-            //     delay:0,
-            //     scale: 1.05,
-            //     ease: 'Expo.easeInOut',
-            //     opacity: 0
-            // }, '-=2')
+     
             .from('.leftitem', {
                 stagger: .3,
                 delay:1.3,
@@ -72,14 +66,7 @@ function Home() {
                                 <h4 class="leftitem">Hello, I am 👋</h4>
                                 {/* <img class="leftitem" src="./imgs/name.png" alt=""> */}
                                 <h4 class="leftitem" id="lblue">Shantanu Saha</h4>
-                                
-                                {/* <span id="lblue">(The Mern Developer)</span> */}
-                                {/* <div class="text-effect">
-                           
-                            <h1 class="neon leftitem" data-text="Neon" contenteditable>Neon</h1>
-                            <div class="gradient"></div>
-                            <div class="spotlight"></div>
-                        </div> */}
+                         
 
                                 <h5 class="leftitem">a MERN Stack Developer from <span id="lblue">India.</span></h5>
                                 <a href='/#contactme' className='contactbtn leftitem'>Contact me</a>
