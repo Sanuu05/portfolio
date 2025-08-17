@@ -63,16 +63,17 @@ function Home() {
                         <div className='col-md-6 col-12 homeleft'>
                             <div id="left">
                                 <div id="smline"></div>
-                                <h4 class="leftitem">Hello, I am 👋</h4>
+                                <h4 class="leftitem">Hello, I'm 👋</h4>
                                 {/* <img class="leftitem" src="./imgs/name.png" alt=""> */}
                                 <h4 class="leftitem" id="lblue">Shantanu Saha</h4>
                          
 
-                                <h5 class="leftitem">a MERN Stack Developer from <span id="lblue">India.</span></h5>
-                                <a href='/#contactme' className='contactbtn leftitem'>Contact me</a>
+                                <h5 class="leftitem">A passionate <span id="lblue">Full-Stack Developer</span> specializing in <span id="lblue">MERN Stack</span> and <span id="lblue">React Native</span> from <span id="lblue">India.</span></h5>
+                                <p class="leftitem" style={{fontSize: '16px', color: '#666', marginBottom: '20px'}}>I transform ideas into powerful, scalable web and mobile applications with modern technologies and clean code.</p>
+                                <a href='/#contactme' className='contactbtn leftitem'>Let's Build Something Amazing</a>
                                  <div className='social d-md-none d-block'>
                                     <a href='https://www.instagram.com/themerndeveloper' target="_blank"><AiFillInstagram class="leftitem" /></a>
-                                    <a href='' target="_blank" ><AiOutlineWhatsApp class="leftitem" /></a>
+                                    <a href='https://api.whatsapp.com/send/?phone=917047416015&text&app_absent=0' target="_blank" ><AiOutlineWhatsApp class="leftitem" /></a>
                                     <a href='https://www.linkedin.com/in/shantanu-saha-5717b7148/' target="_blank" ><AiFillLinkedin class="leftitem" /></a>
                                     {/* <a href='https://www.fiverr.com/shantanusaha' target="_blank" ><SiFiverr class="leftitem" /></a> */}
                                     <a href='https://github.com/Sanuu05' target="_blank" ><AiFillGithub className='leftitem' /></a>

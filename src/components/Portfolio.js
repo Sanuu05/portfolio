@@ -21,55 +21,62 @@ import port19 from './img/port25.png'
 import port20 from './img/port26.png'
 import port21 from './img/port27.png'
 import port22 from './img/port28.png'
-import html from '../components/img/html.png'
-import css from '../components/img/css.png'
-import java from '../components/img/java.png'
-import figma from '../components/img/figma.png'
-import react from '../components/img/react.png'
-import threejs from '../components/img/threejs.png'
-import node from '../components/img/node.svg'
-import mongo from '../components/img/mongo.svg'
-import git from '../components/img/git.png'
-import fire from '../components/img/fire.png'
-import socket from '../components/img/socket.png'
-import razo from '../components/img/razo.png'
-import vite from '../components/img/vite.png'
-import pusher from '../components/img/pusher.png'
-import alan from '../components/img/alan.png'
-import boot from '../components/img/boot.svg'
-import stripe from '../components/img/stripe.png'
-import mat from '../components/img/mat.png'
-import sass from '../components/img/sass.png'
-import redux from '../components/img/redux.png'
-import expre from '../components/img/express.png'
-import mysql from '../components/img/mysql.png'
+import html from './img/html.png'
+import css from './img/css.png'
+import java from './img/java.png'
+import figma from './img/figma.png'
+import react from './img/react.png'
+import threejs from './img/threejs.png'
+import node from './img/node.svg'
+import mongo from './img/mongo.svg'
+import git from './img/git.png'
+import fire from './img/fire.png'
+import socket from './img/socket.png'
+import razo from './img/razo.png'
+import vite from './img/vite.png'
+import pusher from './img/pusher.png'
+import alan from './img/alan.png'
+import boot from './img/boot.svg'
+import stripe from './img/stripe.png'
+import mat from './img/mat.png'
+import sass from './img/sass.png'
+import redux from './img/redux.png'
+import expre from './img/express.png'
+import mysql from './img/mysql.png'
 import { BsArrowDownCircleFill,BsArrowUpCircleFill ,BsFillArrowUpRightCircleFill } from "react-icons/bs";
 function Portfolio() {
-    const [num,setnum] = useState(12)
+    const [num,setnum] = useState(6)
+    const [activeFilter, setActiveFilter] = useState('all')
+    
     const portdata = [
         {
             img: port4,
-            des: "(E-commerence website)",
+            des: "Full-stack e-commerce platform with payment integration, user authentication, and admin dashboard",
             title: "TechMart",
             url: "https://techmartt.netlify.app",
+            category: "E-commerce",
+            featured: true,
             skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Firebase",img:fire},{name:"Redux",img:redux},{name:'Razorpay',img:razo} ],
-            button:"Open Website"
+            button:"View Project"
         },
         {
             img: port1,
-            des: "(Multi-Cuisine Resturant)",
+            des: "Multi-cuisine restaurant website with online ordering, table booking, and payment processing",
             title: "Foodooze",
             url: "https://foodzooe.netlify.app/",
+            category: "Food & Dining",
             skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Redux",img:redux},{name:'Razorpay',img:razo}],
-            button:"Open Website"
+            button:"View Project"
         },
         {
             img: port13,
-            des: "(Multi-Cuisine Resturant)",
+            des: "Cross-platform mobile app for food delivery with real-time tracking and payment integration",
             title: "Foodooze Mobile App",
             url: "https://expo.dev/@devohut/foodapp",
+            category: "Mobile App",
+            featured: true,
             skills:[{name:"React Native",img:react},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Redux",img:redux},{name:'Stripe',img:stripe}],
-            button:"Open App"
+            button:"View App"
         },
         {
             img: port17,
@@ -219,65 +226,125 @@ function Portfolio() {
             button:"Open Website"
         }
     ]
+    
+    // Filter functions
+    const filteredProjects = portdata.filter(project => {
+        if (activeFilter === 'all') return true
+        if (activeFilter === 'web') return !project.title.toLowerCase().includes('mobile') && !project.title.toLowerCase().includes('app')
+        if (activeFilter === 'mobile') return project.title.toLowerCase().includes('mobile') || project.title.toLowerCase().includes('app')
+        if (activeFilter === 'featured') return project.featured
+        return project.category?.toLowerCase().includes(activeFilter.toLowerCase())
+    })
+    
+    const handleFilterChange = (filter) => {
+        setActiveFilter(filter)
+    }
+    
     return (
-        <section id='portfolio'>
+        <section id='project'>
         <div className='portfolio'>
             <div className='container'>
                 <div className='uptitle'>
                     <p data-aos="fade-up" data-aos-duration="1000">Portfolio</p>
-                    <h2 data-aos="fade-up" data-aos-duration="1000">My Portfolio</h2>
+                    <h2 data-aos="fade-up" data-aos-duration="1000">Featured Projects</h2>
+                    <p className='portfolio-subtitle' data-aos="fade-up" data-aos-duration="1000">Showcasing my best work across web and mobile development</p>
+                    <div data-aos="fade-up" data-aos-duration="1000"></div>
+                </div>
+                
+                {/* Filter Buttons */}
+                <div className='portfolio-filters' data-aos="fade-up" data-aos-duration="1000">
+                    <button 
+                        className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
+                        onClick={() => handleFilterChange('all')}
+                    >
+                        All Projects
+                    </button>
+                    <button 
+                        className={`filter-btn ${activeFilter === 'featured' ? 'active' : ''}`}
+                        onClick={() => handleFilterChange('featured')}
+                    >
+                        Featured
+                    </button>
+                    <button 
+                        className={`filter-btn ${activeFilter === 'web' ? 'active' : ''}`}
+                        onClick={() => handleFilterChange('web')}
+                    >
+                        Web Apps
+                    </button>
+                    <button 
+                        className={`filter-btn ${activeFilter === 'mobile' ? 'active' : ''}`}
+                        onClick={() => handleFilterChange('mobile')}
+                    >
+                        Mobile Apps
+                    </button>
+                    <button 
+                        className={`filter-btn ${activeFilter === 'e-commerce' ? 'active' : ''}`}
+                        onClick={() => handleFilterChange('e-commerce')}
+                    >
+                        E-commerce
+                    </button>
                 </div>
                 <div className='row portfoliorow'>
                     {
-                        portdata?.slice(0,num).map((v, i) => {
-                            return  <div className='col-md-6 col-xl-4 col-12 mt-4 px-md-3'>
-                             <div className='portmaincard' style={{backgroundColor:'#161c18'}} data-aos="zoom-in-up" data-aos-duration="1000"> 
+                        filteredProjects?.slice(0,num).map((v, i) => {
+                            return  <div key={i} className='col-md-6 col-xl-4 col-12 mt-4 px-md-3'>
+                             <div className='portmaincard' data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay={i * 100}> 
                                 <div className='portcard'>
-                                    <img src={v?.img} className='img-fluid' alt='port'/>
+                                    <div className='project-image'>
+                                        <img 
+                                            src={v?.img} 
+                                            className='img-fluid' 
+                                            alt={v?.title}
+                                            onError={(e) => {
+                                                console.log('Image failed to load:', v?.img);
+                                                e.target.style.display = 'none';
+                                            }}
+                                            onLoad={() => console.log('Image loaded successfully:', v?.title)}
+                                        />
+                                        <div className='project-overlay'>
+                                            <span className='category-badge'>{v?.category}</span>
+                                        </div>
+                                    </div>
                                     <div className='detail'>
-                                        <h2 style={{textAlign:'center'}}>{v?.title}</h2>
-                                        <p style={{textAlign:'center'}}>{v.des}</p>
-                                        <a href={v?.url} target="_blank">
-                                        <button className='mt-2'>{v?.button} <BsFillArrowUpRightCircleFill/></button>
+                                        <h2>{v?.title}</h2>
+                                        <p>{v.des}</p>
+                                        <a href={v?.url} target="_blank" rel="noopener noreferrer">
+                                            <button className='project-btn'>{v?.button} <BsFillArrowUpRightCircleFill/></button>
                                         </a>
-                                       
                                     </div>
-
                                 </div>
-                                <div className='d-flex justify-content-around flex-wrap mt-3'>
-                                    {v?.skills?.map((v)=>{
-                                        return <div className='px-2 d-flex flex-column justify-content-center align-items-center'>
-
-                                         <img src={v?.img} className='img-fluid' style={{width:'35px',height:'35px'}} alt='port'/>
-                                         <p style={{color:'white',fontSize:'12px',marginTop:'5px',textAlign:'center'}}>{v.name}</p>
-                                         </div>
+                                <div className='project-skills'>
+                                    {v?.skills?.map((skill, index)=>{
+                                        return <div key={index} className='skill-item'>
+                                            <img src={skill?.img} className='skill-icon' alt={skill.name}/>
+                                            <span className='skill-name'>{skill.name}</span>
+                                        </div>
                                     })}
-
-                                    </div>
-
+                                </div>
                             </div>
                             </div>
                         })
                     }
-                    <div className='portbtn'>
+                    <div className='portfolio-controls'>
                         {
-                            portdata?.length<=num?null:<BsArrowDownCircleFill className='mx-2' onClick={()=>setnum(num+6)}/>
+                            filteredProjects?.length > num ? (
+                                <button className='load-more-btn' onClick={() => setnum(num + 6)}>
+                                    <BsArrowDownCircleFill className='btn-icon' />
+                                    Load More Projects
+                                </button>
+                            ) : null
                         }
                         {
-                            num>6?<BsArrowUpCircleFill className='mx-2' onClick={()=>setnum(num-6)}/>:null
+                            num > 6 ? (
+                                <button className='load-less-btn' onClick={() => setnum(num - 6)}>
+                                    <BsArrowUpCircleFill className='btn-icon' />
+                                    Show Less
+                                </button>
+                            ) : null
                         }
-                    
-                    
-
                     </div>
-
-
-
-
-
                 </div>
             </div>
-
         </div>
         </section>
     )

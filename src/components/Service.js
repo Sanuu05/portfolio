@@ -5,26 +5,26 @@ import Aos from 'aos';
 const servicelist = [
     {
         logo:<TiCode/>,
-        title:"Web Development",
-        des:'Web development services include both front-end and back-end development. Whether it is enhancing an existing application or architecting an enterprise application, our developers are up for the challenge.'
+        title:"Full-Stack Web Development",
+        des:'Building robust web applications using MERN stack (MongoDB, Express.js, React.js, Node.js). From concept to deployment, I create scalable solutions that drive business growth.'
 
     },
     {
         logo:<MdOutlineAppRegistration/>,
-        title:"Cross-platform App Development",
-        des:'Cross-platform App Development services include fast, bug-free & well-documented mobile applications that will work across multiple platforms and operating systems (Android and Apple devices). '
+        title:"React Native Mobile Apps",
+        des:'Developing high-performance cross-platform mobile applications with React Native. Single codebase for both iOS and Android, ensuring faster development and consistent user experience.'
 
     },
     {
         logo:<MdDevices/>,
-        title:"Responsive Design",
-        des:'I ensure that my client’s website is responsive on every device, so that no single customer is lost. My responsive website responds to the user’s behavior and environment based on screen size, platform, & orientation.'
+        title:"Responsive UI/UX Design",
+        des:'Creating pixel-perfect, responsive designs that work seamlessly across all devices. Focus on user experience, accessibility, and modern design principles to maximize engagement.'
 
     },
     {
         logo:<MdShoppingCart/>,
-        title:"E-Commerce & CMS Development",
-        des:'I provide best features in eCommerce development with Client Management System and Payment Gateway solutions'
+        title:"E-Commerce Solutions",
+        des:'Building secure, scalable e-commerce platforms with payment gateways, inventory management, and admin dashboards. From small shops to enterprise solutions.'
 
     }
 ]

@@ -79,7 +79,7 @@ function Contact() {
                            <img src={logo} className='footerlogo' alt='footlogo' />
                         </div>
                         <div className='col-8 footright'>
-                            <p>© Copyright 2023. All right reserved</p>
+                            <p>© Copyright  {new Date().getFullYear()} . All right reserved</p>
                             
                         </div>
                     </div>

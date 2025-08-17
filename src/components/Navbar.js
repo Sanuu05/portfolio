@@ -49,7 +49,7 @@ function Navbar() {
                     current = section.getAttribute('id')
                 }
             })
-            console.log("curr", current)
+
             navli.forEach(li => {
                 li.classList.remove('active');
                 if (li.classList.contains(current)) {
@@ -85,7 +85,7 @@ function Navbar() {
 
 
 
-    console.log("kk", change)
+
     return (
         <nav>
             <div className={change ? "nav shadow navbar fixed-top act" : "nav  navbar fixed-top"}>
@@ -108,7 +108,6 @@ function Navbar() {
                                 <li className="aboutt navitem"><a href="/#about">About</a></li>
                                 <li className="skill navitem"><a href="/#Skill">Skills</a></li>
                                 <li className="port navitem"><a href="/#project">Projects</a></li>
-                                <li className="port navitem"><a href="/#portfolio">Portfolio</a></li>
                                 <li className="cont navitem"><a href="/#contactme">Contact</a></li>
 
                             </ul>
