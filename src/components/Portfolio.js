@@ -43,9 +43,10 @@ import sass from './img/sass.png'
 import redux from './img/redux.png'
 import expre from './img/express.png'
 import mysql from './img/mysql.png'
-import { BsArrowDownCircleFill,BsArrowUpCircleFill ,BsFillArrowUpRightCircleFill } from "react-icons/bs";
+import { BsArrowDownCircleFill, BsArrowUpCircleFill, BsFillArrowUpRightCircleFill, BsGithub, BsEye } from "react-icons/bs";
+
 function Portfolio() {
-    const [num,setnum] = useState(10)
+    const [num, setnum] = useState(10)
     const [activeFilter, setActiveFilter] = useState('all')
     
     const portdata = [
@@ -56,8 +57,10 @@ function Portfolio() {
             url: "https://techmartt.netlify.app",
             category: "E-commerce",
             featured: true,
-            skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Firebase",img:fire},{name:"Redux",img:redux},{name:'Razorpay',img:razo} ],
-            button:"View Project"
+            skills: [{ name: "ReactJs", img: react }, { name: 'Bootstrap', img: boot }, { name: "NodeJs", img: node }, { name: "ExpressJS", img: expre }, { name: "MongoDB", img: mongo }, { name: "Firebase", img: fire }, { name: "Redux", img: redux }, { name: 'Razorpay', img: razo }],
+            button: "View Project",
+            github: "https://github.com/yourusername/techmart",
+            highlights: ["Full-stack E-commerce", "Payment Integration", "Admin Dashboard", "Real-time Updates"]
         },
         {
             img: port1,
@@ -66,8 +69,10 @@ function Portfolio() {
             url: "https://foodzooe.netlify.app/",
             category: "Food & Dining",
             featured: true,
-            skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Redux",img:redux},{name:'Razorpay',img:razo}],
-            button:"View Project"
+            skills: [{ name: "ReactJs", img: react }, { name: 'Bootstrap', img: boot }, { name: "NodeJs", img: node }, { name: "ExpressJS", img: expre }, { name: "MongoDB", img: mongo }, { name: "Redux", img: redux }, { name: 'Razorpay', img: razo }],
+            button: "View Project",
+            github: "https://github.com/yourusername/foodooze",
+            highlights: ["Food Ordering System", "Table Reservations", "Payment Processing", "Real-time Tracking"]
         },
         {
             img: port13,
@@ -76,8 +81,10 @@ function Portfolio() {
             url: "https://expo.dev/@devohut/foodapp",
             category: "Mobile App",
             featured: true,
-            skills:[{name:"React Native",img:react},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Redux",img:redux},{name:'Stripe',img:stripe}],
-            button:"View App"
+            skills: [{ name: "React Native", img: react }, { name: "NodeJs", img: node }, { name: "ExpressJS", img: expre }, { name: "MongoDB", img: mongo }, { name: "Redux", img: redux }, { name: 'Stripe', img: stripe }],
+            button: "View App",
+            github: "https://github.com/yourusername/foodooze-mobile",
+            highlights: ["Cross-platform Mobile", "Push Notifications", "Real-time Tracking", "Stripe Integration"]
         },
         {
             img: port17,
@@ -86,8 +93,10 @@ function Portfolio() {
             url: "https://expo.dev/@devohut/app/",
             category: "Mobile App",
             featured: true,
-            skills:[{name:"React Native",img:react},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:'firebase',img:fire},{name:"Redux",img:redux}],
-            button:"Open App"
+            skills: [{ name: "React Native", img: react }, { name: "NodeJs", img: node }, { name: "ExpressJS", img: expre }, { name: "MongoDB", img: mongo }, { name: 'firebase', img: fire }, { name: "Redux", img: redux }],
+            button: "Open App",
+            github: "https://github.com/yourusername/blogy-mobile",
+            highlights: ["Social Media App", "Real-time Posts", "User Interactions", "Firebase Integration"]
         },
         {
             img: port22,
@@ -96,8 +105,10 @@ function Portfolio() {
             url: "https://visionary-boba-2bf892.netlify.app/",
             category: "3D/Interactive",
             featured: true,
-            skills:[{name:'Vite',img:vite},{name:"ReactJs",img:react},{name:'ThreeJs',img:threejs},{name:'Material-UI',img:mat}],
-            button:"Open Website"
+            skills: [{ name: 'Vite', img: vite }, { name: "ReactJs", img: react }, { name: 'ThreeJs', img: threejs }, { name: 'Material-UI', img: mat }],
+            button: "Open Website",
+            github: "https://github.com/yourusername/shoe-customization",
+            highlights: ["3D Visualization", "Real-time Customization", "Interactive Design", "Modern UI/UX"]
         },
         {
             img: port14,
@@ -106,8 +117,10 @@ function Portfolio() {
             url: "https://expo.dev/@devohut/messenger/",
             category: "Mobile App",
             featured: true,
-            skills:[{name:"React Native",img:react},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Redux",img:redux},{name:'Firebase',img:fire},{name:'Socket.io',img:socket}],
-            button:"Open App"
+            skills: [{ name: "React Native", img: react }, { name: "NodeJs", img: node }, { name: "ExpressJS", img: expre }, { name: "MongoDB", img: mongo }, { name: "Redux", img: redux }, { name: 'Firebase', img: fire }, { name: 'Socket.io', img: socket }],
+            button: "Open App",
+            github: "https://github.com/yourusername/messager",
+            highlights: ["Real-time Messaging", "Push Notifications", "Live Chat", "Socket.io Integration"]
         },
         {
             img: port15,
@@ -116,8 +129,10 @@ function Portfolio() {
             url: "https://carbbook.netlify.app/",
             category: "Transportation",
             featured: true,
-            skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Redux",img:redux},{name:'Firebase',img:fire},{name:'Razorpay',img:razo}],
-            button:"Open Website"
+            skills: [{ name: "ReactJs", img: react }, { name: 'Bootstrap', img: boot }, { name: "NodeJs", img: node }, { name: "ExpressJS", img: expre }, { name: "MongoDB", img: mongo }, { name: "Redux", img: redux }, { name: 'Firebase', img: fire }, { name: 'Razorpay', img: razo }],
+            button: "Open Website",
+            github: "https://github.com/yourusername/cariva",
+            highlights: ["Car Rental Platform", "Advanced Booking", "Real-time Availability", "Admin Dashboard"]
         },
         {
             img: port6,
@@ -126,8 +141,10 @@ function Portfolio() {
             url: "https://moonlit-kulfi-4d39d4.netlify.app",
             category: "Communication",
             featured: true,
-            skills:[{name:"ReactJs",img:react},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Redux",img:redux},{name:'Bootstrap',img:boot},{name:'Firebase',img:fire},{name:'Pusher',img:pusher}],
-            button:"Open Website"
+            skills: [{ name: "ReactJs", img: react }, { name: "NodeJs", img: node }, { name: "ExpressJS", img: expre }, { name: "MongoDB", img: mongo }, { name: "Redux", img: redux }, { name: 'Bootstrap', img: boot }, { name: 'Firebase', img: fire }, { name: 'Pusher', img: pusher }],
+            button: "Open Website",
+            github: "https://github.com/yourusername/messenger-web",
+            highlights: ["Real-time Chat", "Message Encryption", "File Sharing", "User Authentication"]
         },
         {
             img: port16,
@@ -136,8 +153,10 @@ function Portfolio() {
             url: "https://taupe-lamington-8e2a4b.netlify.app/",
             category: "AI/News",
             featured: true,
-            skills:[{name:"ReactJs",img:react},{name:'Material-UI',img:mat},{name:'Alan Ai',img:alan}],
-            button:"Open Website"
+            skills: [{ name: "ReactJs", img: react }, { name: 'Material-UI', img: mat }, { name: 'Alan Ai', img: alan }],
+            button: "Open Website",
+            github: "https://github.com/yourusername/ai-news-app",
+            highlights: ["AI-Powered", "Voice Control", "Personalized Content", "Natural Language Processing"]
         },
         {
             img: port9,
@@ -146,228 +165,115 @@ function Portfolio() {
             url: "https://happy-heisenberg-9c1cdd.netlify.app/",
             category: "Blog/Content",
             featured: true,
-            skills:[{name:"ReactJs",img:react},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Redux",img:redux}],
-            button:"Open Website"
+            skills: [{ name: "ReactJs", img: react }, { name: "NodeJs", img: node }, { name: "ExpressJS", img: expre }, { name: "MongoDB", img: mongo }, { name: "Redux", img: redux }],
+            button: "Open Website",
+            github: "https://github.com/yourusername/techhub",
+            highlights: ["Content Management", "User Authentication", "Comment System", "Admin Panel"]
         }
-        // Commented out projects - can be restored later if needed
-        /*
-        {
-            img: port19,
-            des: "(Clone)",
-            title: "Youtube",
-            url: "https://youtubecln.netlify.app/",
-            skills:[{name:"ReactJs",img:react},{name:'Material-Ui',img:mat},{name:"Redux",img:redux}],
-            button:"Open Website"
-        },
-        {
-            img: port18,
-            des: "(Social Media Website)",
-            title: "Blogy Mobile Website",
-            url: "https://twittexr.netlify.app/",
-            skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot},{name:"Redux",img:redux},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:'firebase',img:fire}],
-            button:"Open Website"
-        },
-        {
-            img: port21,
-            des: "EMI calculator for Car,House ,Insurance or any with down payment(if any) ",
-            title: "EMI Calculator",
-            url: "https://emicalcu.netlify.app/",
-            skills:[{name:"ReactJs",img:react},{name:'Material-UI',img:mat}],
-            button:"Open Website"
-        },
-        {
-            img: port8,
-            des: "(Cake Shop)",
-            title: "CakeWorld",
-            url: "https://cakeworldn.netlify.app/",
-            skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot}],
-            button:"Open Website"
-        },
-        {
-            img: port10,
-            des: "(Movie Web App)",
-            title: "MovieApp",
-            url: "https://zen-mclean-d30e68.netlify.app/",
-            skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot}],
-            button:"Open Website"
-        },
-        {
-            img: port3,
-            des: "(Burger Resturant)",
-            title: "Burgery",
-            url: "https://gallant-volhard-b773fe.netlify.app/",
-            skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot}],
-            button:"Open Website"
-        },
-        {
-            img: port20,
-            des: " 3D customization tool",
-            title: "Customized T-Shirt",
-            url: "https://silver-donut-02b056.netlify.app/",
-            skills:[{name:'Vite',img:vite},{name:"ReactJs",img:react},{name:'ThreeJs',img:threejs}],
-            button:"Open Website"
-        },
-        {
-            img: port2,
-            des: "(A bed and breakfast (typically shortened to B&B))",
-            title: "Nestled Inn",
-            url: "https://fervent-hypatia-2c1f75.netlify.app/",
-            skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot}],
-            button:"Open Website"
-        },
-        {
-            img: port11,
-            des: "(Interior Design website)",
-            title: "Interiorlia",
-            url: "https://laughing-lichterman-271421.netlify.app/",
-            skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot}],
-            button:"Open Website"
-        },
-        {
-            img: port7,
-            des: "(Trek Planing website)",
-            title: "TreckPlanner",
-            url: "https://xenodochial-goodall-a32c1b.netlify.app/",
-            skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot}],
-            button:"Open Website"
-        }
-        */
     ]
-    
-    // Filter functions
-    const filteredProjects = portdata.filter(project => {
-        if (activeFilter === 'all') return true
-        if (activeFilter === 'featured') return project.featured
-        if (activeFilter === 'web') return !project.title.toLowerCase().includes('mobile') && !project.title.toLowerCase().includes('app')
-        if (activeFilter === 'mobile') return project.title.toLowerCase().includes('mobile') || project.title.toLowerCase().includes('app')
-        if (activeFilter === 'e-commerce') return project.category === 'E-commerce'
-        if (activeFilter === '3d-interactive') return project.category === '3D/Interactive'
-        if (activeFilter === 'ai-news') return project.category === 'AI/News'
-        return project.category?.toLowerCase().includes(activeFilter.toLowerCase())
-    })
-    
-    const handleFilterChange = (filter) => {
-        setActiveFilter(filter)
+
+    const categories = ['all', 'E-commerce', 'Food & Dining', 'Mobile App', '3D/Interactive', 'Transportation', 'Communication', 'AI/News', 'Blog/Content']
+
+    const filteredProjects = activeFilter === 'all' 
+        ? portdata.slice(0, num) 
+        : portdata.filter(project => project.category === activeFilter).slice(0, num)
+
+    const toggleProjects = () => {
+        setnum(num === 10 ? portdata.length : 10)
     }
-    
+
     return (
-        <section id='project'>
-        <div className='portfolio'>
-            <div className='container'>
-                <div className='uptitle'>
-                    <p data-aos="fade-up" data-aos-duration="1000">Portfolio</p>
-                    <h2 data-aos="fade-up" data-aos-duration="1000">Featured Projects</h2>
-                    <p className='portfolio-subtitle' data-aos="fade-up" data-aos-duration="1000">Showcasing my best work across web and mobile development</p>
-                    <div data-aos="fade-up" data-aos-duration="1000"></div>
-                </div>
-                
-                {/* Filter Buttons */}
-                <div className='portfolio-filters' data-aos="fade-up" data-aos-duration="1000">
-                    <button 
-                        className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
-                        onClick={() => handleFilterChange('all')}
-                    >
-                        All Projects
-                    </button>
-                    <button 
-                        className={`filter-btn ${activeFilter === 'featured' ? 'active' : ''}`}
-                        onClick={() => handleFilterChange('featured')}
-                    >
-                        Featured
-                    </button>
-                    <button 
-                        className={`filter-btn ${activeFilter === 'web' ? 'active' : ''}`}
-                        onClick={() => handleFilterChange('web')}
-                    >
-                        Web Apps
-                    </button>
-                    <button 
-                        className={`filter-btn ${activeFilter === 'mobile' ? 'active' : ''}`}
-                        onClick={() => handleFilterChange('mobile')}
-                    >
-                        Mobile Apps
-                    </button>
-                    <button 
-                        className={`filter-btn ${activeFilter === 'e-commerce' ? 'active' : ''}`}
-                        onClick={() => handleFilterChange('e-commerce')}
-                    >
-                        E-commerce
-                    </button>
-                    <button 
-                        className={`filter-btn ${activeFilter === '3d-interactive' ? 'active' : ''}`}
-                        onClick={() => handleFilterChange('3d-interactive')}
-                    >
-                        3D & Interactive
-                    </button>
-                    <button 
-                        className={`filter-btn ${activeFilter === 'ai-news' ? 'active' : ''}`}
-                        onClick={() => handleFilterChange('ai-news')}
-                    >
-                        AI & News
-                    </button>
-                </div>
-                <div className='row portfoliorow'>
-                    {
-                        filteredProjects?.slice(0,num).map((v, i) => {
-                            return  <div key={i} className='col-md-6 col-xl-4 col-12 mt-4 px-md-3'>
-                             <div className='portmaincard' data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay={i * 100}> 
-                                <div className='portcard'>
-                                    <div className='project-image'>
-                                        <img 
-                                            src={v?.img} 
-                                            className='img-fluid' 
-                                            alt={v?.title}
-                                            onError={(e) => {
-                                                console.log('Image failed to load:', v?.img);
-                                                e.target.style.display = 'none';
-                                            }}
-                                            onLoad={() => console.log('Image loaded successfully:', v?.title)}
-                                        />
-                                        <div className='project-overlay'>
-                                            <span className='category-badge'>{v?.category}</span>
+        <section id='portfolio' className='portfolio-section'>
+            <div className='portfolio'>
+                <div className='container'>
+                    <div className='portfolio-header' data-aos="fade-up" data-aos-duration="1000">
+                        <p className='portfolio-subtitle'>My Work</p>
+                        <h2 className='portfolio-title'>Featured Projects</h2>
+                        <p className='portfolio-description'>
+                            A showcase of my best work across different domains, demonstrating full-stack development capabilities and innovative solutions
+                        </p>
+                    </div>
+
+                    <div className='portfolio-filters' data-aos="fade-up" data-aos-duration="1000">
+                        {categories.map((category, index) => (
+                            <button
+                                key={index}
+                                className={`filter-btn ${activeFilter === category ? 'active' : ''}`}
+                                onClick={() => setActiveFilter(category)}
+                            >
+                                {category === 'all' ? 'All Projects' : category}
+                            </button>
+                        ))}
+                    </div>
+
+                    <div className='portfolio-grid'>
+                        {filteredProjects.map((project, index) => (
+                            <div key={index} className='project-card' data-aos="fade-up" data-aos-duration="1000" data-aos-delay={index * 100}>
+                                <div className='project-image'>
+                                    <img src={project.img} alt={project.title} />
+                                    <div className='project-overlay'>
+                                        <div className='project-actions'>
+                                            <a href={project.url} target="_blank" rel="noopener noreferrer" className='action-btn view-btn'>
+                                                <BsEye />
+                                            </a>
+                                            {project.github && (
+                                                <a href={project.github} target="_blank" rel="noopener noreferrer" className='action-btn github-btn'>
+                                                    <BsGithub />
+                                                </a>
+                                            )}
                                         </div>
                                     </div>
-                                    <div className='detail'>
-                                        <h2>{v?.title}</h2>
-                                        <p>{v.des}</p>
-                                        <a href={v?.url} target="_blank" rel="noopener noreferrer">
-                                            <button className='project-btn'>{v?.button} <BsFillArrowUpRightCircleFill/></button>
+                                </div>
+                                
+                                <div className='project-content'>
+                                    <div className='project-category'>{project.category}</div>
+                                    <h3 className='project-title'>{project.title}</h3>
+                                    <p className='project-description'>{project.des}</p>
+                                    
+                                    <div className='project-highlights'>
+                                        {project.highlights.map((highlight, idx) => (
+                                            <span key={idx} className='highlight-tag'>{highlight}</span>
+                                        ))}
+                                    </div>
+                                    
+                                    <div className='project-skills'>
+                                        {project.skills.map((skill, idx) => (
+                                            <div key={idx} className='skill-tag'>
+                                                <img src={skill.img} alt={skill.name} />
+                                                <span>{skill.name}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    
+                                    <div className='project-footer'>
+                                        <a href={project.url} target="_blank" rel="noopener noreferrer" className='project-link'>
+                                            {project.button} <BsFillArrowUpRightCircleFill />
                                         </a>
                                     </div>
                                 </div>
-                                <div className='project-skills'>
-                                    {v?.skills?.map((skill, index)=>{
-                                        return <div key={index} className='skill-item'>
-                                            <img src={skill?.img} className='skill-icon' alt={skill.name}/>
-                                            <span className='skill-name'>{skill.name}</span>
-                                        </div>
-                                    })}
-                                </div>
                             </div>
-                            </div>
-                        })
-                    }
-                    <div className='portfolio-controls'>
-                        {
-                            filteredProjects?.length > num ? (
-                                <button className='load-more-btn' onClick={() => setnum(num + 6)}>
-                                    <BsArrowDownCircleFill className='btn-icon' />
-                                    Load More Projects
-                                </button>
-                            ) : null
-                        }
-                        {
-                            num > 6 ? (
-                                <button className='load-less-btn' onClick={() => setnum(num - 6)}>
-                                    <BsArrowUpCircleFill className='btn-icon' />
-                                    Show Less
-                                </button>
-                            ) : null
-                        }
+                        ))}
                     </div>
+
+                    {portdata.length > 10 && (
+                        <div className='portfolio-toggle' data-aos="fade-up" data-aos-duration="1000">
+                            <button onClick={toggleProjects} className='toggle-btn'>
+                                {num === 10 ? (
+                                    <>
+                                        <span>Show More Projects</span>
+                                        <BsArrowDownCircleFill />
+                                    </>
+                                ) : (
+                                    <>
+                                        <span>Show Less</span>
+                                        <BsArrowUpCircleFill />
+                                    </>
+                                )}
+                            </button>
+                        </div>
+                    )}
                 </div>
             </div>
-        </div>
         </section>
     )
 }
