@@ -1287,6 +1287,9 @@ input, textarea{
 
 
 @media screen and (max-width: 1200px) {
+  #bg{
+    padding-top: 50px;
+  }
   .servicerow{
     padding: 20px 60px;
   }
