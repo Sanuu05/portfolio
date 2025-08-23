@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { AiFillInstagram, AiOutlineWhatsApp, AiFillLinkedin, AiOutlineSend,AiFillFacebook,AiFillTwitterSquare,AiFillGithub } from "react-icons/ai";
-import { SiFiverr, SiTelegram } from "react-icons/si";
+import { AiOutlineWhatsApp, AiFillLinkedin, AiOutlineSend, AiFillGithub } from "react-icons/ai";
+import { SiTelegram } from "react-icons/si";
 import Axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -117,27 +117,18 @@ function Contact() {
                                 
                                 <div className='social-connect'>
                                     <p className='social-title'>Connect with me directly</p>
-                                    <div className='social-links'>
-                                        <a href='https://www.instagram.com/themerndeveloper' target="_blank" rel="noopener noreferrer" className='social-link instagram'>
-                                            <AiFillInstagram />
-                                        </a>
-                                        <a href='https://api.whatsapp.com/send/?phone=917047416015&text&app_absent=0' target="_blank" rel="noopener noreferrer" className='social-link whatsapp'>
+                                    <div className='social-links-contact'>
+                                        <a href='https://api.whatsapp.com/send/?phone=917047416015&text&app_absent=0' target="_blank" rel="noopener noreferrer" className='social-icon-contact whatsapp'>
                                             <AiOutlineWhatsApp />
                                         </a>
-                                        <a href='https://www.linkedin.com/in/shantanu-saha-5717b7148/' target="_blank" rel="noopener noreferrer" className='social-link linkedin'>
+                                        <a href='https://www.linkedin.com/in/shantanu-saha-5717b7148/' target="_blank" rel="noopener noreferrer" className='social-icon-contact linkedin'>
                                             <AiFillLinkedin />
                                         </a>
-                                        <a href='https://github.com/Sanuu05' target="_blank" rel="noopener noreferrer" className='social-link github'>
+                                        <a href='https://github.com/Sanuu05' target="_blank" rel="noopener noreferrer" className='social-icon-contact github'>
                                             <AiFillGithub />
                                         </a>
-                                        <a href='https://t.me/sanuu_mern' target="_blank" rel="noopener noreferrer" className='social-link telegram'>
+                                        <a href='https://t.me/sanuu_mern' target="_blank" rel="noopener noreferrer" className='social-icon-contact telegram'>
                                             <SiTelegram />
-                                        </a>
-                                        <a href='https://www.facebook.com/themerndeveloper' target="_blank" rel="noopener noreferrer" className='social-link facebook'>
-                                            <AiFillFacebook />
-                                        </a>
-                                        <a href='https://twitter.com/shantansaha' target="_blank" rel="noopener noreferrer" className='social-link twitter'>
-                                            <AiFillTwitterSquare />
                                         </a>
                                     </div>
                                 </div>
