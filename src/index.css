@@ -18,6 +18,17 @@ font-family: 'Ubuntu', sans-serif;
 
 /*! navbar */
 
+/* Simple iOS Safari fix for navigation visibility */
+@supports (-webkit-touch-callout: none) {
+  .nav {
+    -webkit-transform: translateZ(0);
+  }
+  
+  .right_nav {
+    -webkit-transform: translateZ(0);
+  }
+}
+
 .nav{
   width: 100%;
   padding: 15px 10px;
@@ -26,8 +37,6 @@ font-family: 'Ubuntu', sans-serif;
   color: black!important;
   font-family: 'Architects Daughter', cursive;
 font-family: 'Krona One', sans-serif;
-  
-  
   
 
 }
@@ -1442,14 +1451,16 @@ input, textarea{
     padding: 0!important;
   }
   .right_nav .snav {
-    position: absolute;
+    position: fixed;
     
     /* margin: 0; */
-    left:-130%;
+    left:-100%;
     top: 0px;
     
    
     height: 100vh;
+    width: 280px;
+    z-index: 1000;
     
     
     
@@ -1496,16 +1507,17 @@ input, textarea{
     margin-top: -60px;
   }
   .right_nav ul {
-    position: absolute;
+    position: fixed;
     
     /* margin: 0; */
-    left:-130%;
+    left:-100%;
     /* top: 50px; */
     transition: 1s ease;
     
    
     height: 100vh;
-    position: fixed;
+    width: 280px;
+    z-index: 1000;
     
     
   }
@@ -1522,7 +1534,7 @@ input, textarea{
     flex-direction: column;
     height: 100vh!important;
     justify-content: flex-start;
-    width: 200px;
+    width: 280px;
     align-items: center;
     height: 100vh;
     padding-top: 10vh;
@@ -1532,11 +1544,12 @@ input, textarea{
     width: 100%;
   } */
   .cmenu .snav{
-    position: absolute;
-    z-index: 99;
+    position: fixed;
+    z-index: 1000;
     left: 0px;
     margin: 0;
     padding: 0;
+    width: 280px;
   }
   .cmenu ul{
     /* position: absolute; */
@@ -1544,6 +1557,7 @@ input, textarea{
     left: 0px;
     margin: 0;
     padding-top: 10vh;
+    z-index: 1000;
   }
   .right_nav ul li{
     margin: 20px 0;

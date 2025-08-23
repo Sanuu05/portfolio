@@ -41,7 +41,14 @@ function Navbar() {
         })
         const sections = document.querySelectorAll('section')
         const navli = document.querySelectorAll('nav ul li')
-        window.addEventListener('scroll', () => {
+        
+        // iOS Safari scroll event handling
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        const isAndroid = /Android/.test(navigator.userAgent);
+        const isMobile = isIOS || isAndroid;
+        const scrollOptions = isMobile ? { passive: false } : { passive: true };
+        
+        const handleScroll = () => {
             let current = "";
             sections.forEach(section => {
                 const sectop = section.offsetTop;
@@ -56,10 +63,67 @@ function Navbar() {
                     li.classList.add('active')
                 }
             })
-
-
-
-        })
+        }
+        
+        window.addEventListener('scroll', handleScroll, scrollOptions)
+        
+        // Mobile device specific: comprehensive fix for navigation visibility
+        let scrollTimeout;
+        const ensureNavigationVisible = () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                const rightNav = document.querySelector('.right_nav');
+                const nav = document.querySelector('.nav');
+                
+                if (rightNav && nav) {
+                    // Force mobile browsers to recognize the elements
+                    rightNav.style.visibility = 'hidden';
+                    nav.style.visibility = 'hidden';
+                    
+                    // Force reflow by accessing offsetHeight
+                    const rightNavHeight = rightNav.offsetHeight;
+                    const navHeight = nav.offsetHeight;
+                    
+                    // Restore visibility
+                    rightNav.style.visibility = 'visible';
+                    nav.style.visibility = 'visible';
+                    
+                    // Ensure proper positioning
+                    rightNav.style.position = 'relative';
+                    const finalHeight = rightNav.offsetHeight; // Force another reflow
+                    rightNav.style.position = '';
+                }
+            }, 50);
+        };
+        
+        // More aggressive mobile handling
+        if (isMobile) {
+            // Listen to multiple events that can cause visibility issues
+            window.addEventListener('scroll', ensureNavigationVisible, scrollOptions);
+            window.addEventListener('resize', ensureNavigationVisible, scrollOptions);
+            
+            // iOS specific events
+            if (isIOS) {
+                window.addEventListener('orientationchange', ensureNavigationVisible, scrollOptions);
+                document.addEventListener('visibilitychange', ensureNavigationVisible);
+            }
+            
+            // Android specific events
+            if (isAndroid) {
+                window.addEventListener('focus', ensureNavigationVisible);
+                window.addEventListener('blur', ensureNavigationVisible);
+            }
+            
+            // Force visibility check every 2 seconds as a fallback
+            const visibilityInterval = setInterval(ensureNavigationVisible, 2000);
+            
+            // Cleanup interval on unmount
+            return () => {
+                clearInterval(visibilityInterval);
+                clearTimeout(scrollTimeout);
+            };
+        }
+        
         const changenav = () => {
             if (window.scrollY > 100) {
                 setchange(true)
@@ -69,9 +133,26 @@ function Navbar() {
                 setchange(false)
             }
         }
-        window.addEventListener('scroll', changenav)
+        window.addEventListener('scroll', changenav, scrollOptions)
 
-    })
+        // Cleanup function
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', changenav);
+            if (isMobile) {
+                window.removeEventListener('scroll', ensureNavigationVisible);
+                window.removeEventListener('resize', ensureNavigationVisible);
+                if (isIOS) {
+                    window.removeEventListener('orientationchange', ensureNavigationVisible);
+                    document.removeEventListener('visibilitychange', ensureNavigationVisible);
+                }
+                if (isAndroid) {
+                    window.removeEventListener('focus', ensureNavigationVisible);
+                    window.removeEventListener('blur', ensureNavigationVisible);
+                }
+            }
+        }
+    }, [menu])
 
     // $(document).on('click', 'ul li', function () {
     //     $(this).addClass("active").siblings().removeClass('active')
@@ -112,8 +193,8 @@ function Navbar() {
 
                             </ul>
                         </div>
-                        <div class="menu-btn" onClick={() => setmenu(!menu)}>
-                            <div class={change?"menu-btn__burgerone":"menu-btn__burger"} ></div>
+                        <div className="menu-btn" onClick={() => setmenu(!menu)}>
+                            <div className={change?"menu-btn__burgerone":"menu-btn__burger"} ></div>
                         </div>
 
                     </div>
