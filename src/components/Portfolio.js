@@ -45,13 +45,13 @@ import expre from './img/express.png'
 import mysql from './img/mysql.png'
 import { BsArrowDownCircleFill,BsArrowUpCircleFill ,BsFillArrowUpRightCircleFill } from "react-icons/bs";
 function Portfolio() {
-    const [num,setnum] = useState(6)
+    const [num,setnum] = useState(10)
     const [activeFilter, setActiveFilter] = useState('all')
     
     const portdata = [
         {
             img: port4,
-            des: "Full-stack e-commerce platform with payment integration, user authentication, and admin dashboard",
+            des: "A comprehensive e-commerce platform featuring user authentication, product management, shopping cart, secure payment processing with Razorpay, and a responsive admin dashboard for inventory control.",
             title: "TechMart",
             url: "https://techmartt.netlify.app",
             category: "E-commerce",
@@ -61,16 +61,17 @@ function Portfolio() {
         },
         {
             img: port1,
-            des: "Multi-cuisine restaurant website with online ordering, table booking, and payment processing",
+            des: "A sophisticated restaurant management system with online food ordering, table reservations, real-time order tracking, and integrated payment processing. Features a dynamic menu system and customer review management.",
             title: "Foodooze",
             url: "https://foodzooe.netlify.app/",
             category: "Food & Dining",
+            featured: true,
             skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Redux",img:redux},{name:'Razorpay',img:razo}],
             button:"View Project"
         },
         {
             img: port13,
-            des: "Cross-platform mobile app for food delivery with real-time tracking and payment integration",
+            des: "A cross-platform React Native mobile application for food delivery featuring real-time order tracking, push notifications, user authentication, and secure payment processing with Stripe integration.",
             title: "Foodooze Mobile App",
             url: "https://expo.dev/@devohut/foodapp",
             category: "Mobile App",
@@ -80,38 +81,76 @@ function Portfolio() {
         },
         {
             img: port17,
-            des: "(Social Media App)",
+            des: "A feature-rich social media mobile application built with React Native, offering real-time post sharing, user interactions, push notifications, and seamless content management with Firebase integration.",
             title: "Blogy Mobile App",
             url: "https://expo.dev/@devohut/app/",
+            category: "Mobile App",
+            featured: true,
             skills:[{name:"React Native",img:react},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:'firebase',img:fire},{name:"Redux",img:redux}],
             button:"Open App"
         },
         {
             img: port22,
-           
-            des: " 3D customization tool",
+            des: "An innovative 3D shoe customization platform built with Three.js and React, allowing users to design personalized footwear with real-time 3D visualization, color customization, and interactive design tools.",
             title: "Shoe Customization",
             url: "https://visionary-boba-2bf892.netlify.app/",
+            category: "3D/Interactive",
+            featured: true,
             skills:[{name:'Vite',img:vite},{name:"ReactJs",img:react},{name:'ThreeJs',img:threejs},{name:'Material-UI',img:mat}],
             button:"Open Website"
         },
         {
             img: port14,
-            des: "Chatting Mobile App",
+            des: "A real-time messaging mobile application featuring instant message delivery, push notifications, user authentication, and seamless communication with Socket.io integration for live chat functionality.",
             title: "Messager",
             url: "https://expo.dev/@devohut/messenger/",
+            category: "Mobile App",
+            featured: true,
             skills:[{name:"React Native",img:react},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Redux",img:redux},{name:'Firebase',img:fire},{name:'Socket.io',img:socket}],
             button:"Open App"
         },
         {
             img: port15,
-            des: "(Car Rental Web App)",
+            des: "A comprehensive car rental platform with advanced booking system, real-time availability checking, secure payment processing, and user management. Features include vehicle search, booking history, and admin dashboard.",
             title: "Cariva",
             url: "https://carbbook.netlify.app/",
+            category: "Transportation",
+            featured: true,
             skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Redux",img:redux},{name:'Firebase',img:fire},{name:'Razorpay',img:razo}],
             button:"Open Website"
-            
         },
+        {
+            img: port6,
+            des: "A sophisticated web-based messaging platform with real-time chat capabilities, user authentication, message encryption, and file sharing. Built with modern web technologies for seamless communication experience.",
+            title: "Messenger Web",
+            url: "https://moonlit-kulfi-4d39d4.netlify.app",
+            category: "Communication",
+            featured: true,
+            skills:[{name:"ReactJs",img:react},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Redux",img:redux},{name:'Bootstrap',img:boot},{name:'Firebase',img:fire},{name:'Pusher',img:pusher}],
+            button:"Open Website"
+        },
+        {
+            img: port16,
+            des: "An intelligent news aggregation platform powered by Alan AI, featuring voice-controlled navigation, personalized content recommendations, and real-time news updates from multiple sources with natural language processing.",
+            title: "AI NEWS WEB APP",
+            url: "https://taupe-lamington-8e2a4b.netlify.app/",
+            category: "AI/News",
+            featured: true,
+            skills:[{name:"ReactJs",img:react},{name:'Material-UI',img:mat},{name:'Alan Ai',img:alan}],
+            button:"Open Website"
+        },
+        {
+            img: port9,
+            des: "A comprehensive technology blog platform with advanced content management system, user authentication, comment system, and responsive design. Features include article categorization, search functionality, and admin panel.",
+            title: "TECHHUB",
+            url: "https://happy-heisenberg-9c1cdd.netlify.app/",
+            category: "Blog/Content",
+            featured: true,
+            skills:[{name:"ReactJs",img:react},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Redux",img:redux}],
+            button:"Open Website"
+        }
+        // Commented out projects - can be restored later if needed
+        /*
         {
             img: port19,
             des: "(Clone)",
@@ -120,7 +159,6 @@ function Portfolio() {
             skills:[{name:"ReactJs",img:react},{name:'Material-Ui',img:mat},{name:"Redux",img:redux}],
             button:"Open Website"
         },
-     
         {
             img: port18,
             des: "(Social Media Website)",
@@ -129,39 +167,12 @@ function Portfolio() {
             skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot},{name:"Redux",img:redux},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:'firebase',img:fire}],
             button:"Open Website"
         },
-       
-      
         {
             img: port21,
             des: "EMI calculator for Car,House ,Insurance or any with down payment(if any) ",
             title: "EMI Calculator",
             url: "https://emicalcu.netlify.app/",
             skills:[{name:"ReactJs",img:react},{name:'Material-UI',img:mat}],
-            button:"Open Website"
-        },
-        {
-            img: port6,
-            des: "Chatting Web App",
-            title: "Messenger",
-            url: "https://moonlit-kulfi-4d39d4.netlify.app",
-            skills:[{name:"ReactJs",img:react},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Redux",img:redux},{name:'Bootstrap',img:boot},{name:'Firebase',img:fire},{name:'Pusher',img:pusher}],
-            button:"Open Website"
-        },
-        {
-            img: port16,
-           
-            des: " Artificial Intelligence News App",
-            title: "AI NEWS WEB APP",
-            url: "https://taupe-lamington-8e2a4b.netlify.app/",
-            skills:[{name:"ReactJs",img:react},{name:'Material-UI',img:mat},{name:'Alan Ai',img:alan}],
-            button:"Open Website"
-        },
-        {
-            img: port9,
-            des: "(Tech Blog Web App)",
-            title: "TECHHUB",
-            url: "https://happy-heisenberg-9c1cdd.netlify.app/",
-            skills:[{name:"ReactJs",img:react},{name:"NodeJs",img:node},{name:"ExpressJS",img:expre},{name:"MongoDB",img:mongo},{name:"Redux",img:redux}],
             button:"Open Website"
         },
         {
@@ -172,8 +183,6 @@ function Portfolio() {
             skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot}],
             button:"Open Website"
         },
-       
-    
         {
             img: port10,
             des: "(Movie Web App)",
@@ -182,7 +191,6 @@ function Portfolio() {
             skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot}],
             button:"Open Website"
         },
-        
         {
             img: port3,
             des: "(Burger Resturant)",
@@ -193,7 +201,6 @@ function Portfolio() {
         },
         {
             img: port20,
-           
             des: " 3D customization tool",
             title: "Customized T-Shirt",
             url: "https://silver-donut-02b056.netlify.app/",
@@ -202,7 +209,7 @@ function Portfolio() {
         },
         {
             img: port2,
-            des: "(A bed and breakfast (typically shortened to B&B or BnB))",
+            des: "(A bed and breakfast (typically shortened to B&B))",
             title: "Nestled Inn",
             url: "https://fervent-hypatia-2c1f75.netlify.app/",
             skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot}],
@@ -216,7 +223,6 @@ function Portfolio() {
             skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot}],
             button:"Open Website"
         },
-        
         {
             img: port7,
             des: "(Trek Planing website)",
@@ -225,14 +231,18 @@ function Portfolio() {
             skills:[{name:"ReactJs",img:react},{name:'Bootstrap',img:boot}],
             button:"Open Website"
         }
+        */
     ]
     
     // Filter functions
     const filteredProjects = portdata.filter(project => {
         if (activeFilter === 'all') return true
+        if (activeFilter === 'featured') return project.featured
         if (activeFilter === 'web') return !project.title.toLowerCase().includes('mobile') && !project.title.toLowerCase().includes('app')
         if (activeFilter === 'mobile') return project.title.toLowerCase().includes('mobile') || project.title.toLowerCase().includes('app')
-        if (activeFilter === 'featured') return project.featured
+        if (activeFilter === 'e-commerce') return project.category === 'E-commerce'
+        if (activeFilter === '3d-interactive') return project.category === '3D/Interactive'
+        if (activeFilter === 'ai-news') return project.category === 'AI/News'
         return project.category?.toLowerCase().includes(activeFilter.toLowerCase())
     })
     
@@ -282,6 +292,18 @@ function Portfolio() {
                         onClick={() => handleFilterChange('e-commerce')}
                     >
                         E-commerce
+                    </button>
+                    <button 
+                        className={`filter-btn ${activeFilter === '3d-interactive' ? 'active' : ''}`}
+                        onClick={() => handleFilterChange('3d-interactive')}
+                    >
+                        3D & Interactive
+                    </button>
+                    <button 
+                        className={`filter-btn ${activeFilter === 'ai-news' ? 'active' : ''}`}
+                        onClick={() => handleFilterChange('ai-news')}
+                    >
+                        AI & News
                     </button>
                 </div>
                 <div className='row portfoliorow'>
