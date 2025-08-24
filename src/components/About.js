@@ -65,7 +65,7 @@ function About() {
                                         </p>
                                         <div className='resume-download'>
                                             <a 
-                                                href="/resume.pdf" 
+                                                href="/Shantanu_Saha_Resume.pdf" 
                                                 download="Shantanu_Saha_Resume.pdf"
                                                 className='resume-btn'
                                                 data-aos="fade-up" 
