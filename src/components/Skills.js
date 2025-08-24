@@ -21,11 +21,12 @@ import aws from '../components/img/aws.png'
 import ec2 from '../components/img/ec2.png'
 import lambda from '../components/img/lambda.png'
 import s3 from '../components/img/s3.png'
+import nextjs from '../components/img/nextjs.svg'
+import typescript from '../components/img/typescript.svg'
 
 const skillCategories = [
     {
         category: "Frontend Development",
-        description: "Creating beautiful and responsive user interfaces",
         skills: [
             { logo: html, title: 'HTML5' },
             { logo: css, title: 'CSS3' },
@@ -33,6 +34,8 @@ const skillCategories = [
             { logo: java, title: 'JavaScript' },
             { logo: react, title: 'React.js' },
             { logo: react, title: 'React Native' },
+            { logo: nextjs, title: 'Next.js' },
+            { logo: typescript, title: 'TypeScript' },
             { logo: redux, title: 'Redux' },
             { logo: boot, title: 'Bootstrap' },
             { logo: mat, title: 'Material UI' },
@@ -41,7 +44,6 @@ const skillCategories = [
     },
     {
         category: "Backend Development",
-        description: "Building robust server-side applications and APIs",
         skills: [
             { logo: node, title: 'Node.js' },
             { logo: expre, title: 'Express.js' },
@@ -53,7 +55,6 @@ const skillCategories = [
     },
     {
         category: "DevOps & Tools",
-        description: "Essential tools for modern development workflow",
         skills: [
             { logo: git, title: 'Git & GitHub' },
             { logo: docker, title: 'Docker' },
@@ -73,7 +74,7 @@ function Skills() {
                     <p className='skills-subtitle'>Skills</p>
                     <h2 className='skills-title'>My Skills</h2>
                     <p className='skills-description'>
-                        A comprehensive collection of technologies and tools I use to build modern, scalable applications
+                        Technologies and tools I use to build modern applications
                     </p>
                 </div>
                 
@@ -84,9 +85,6 @@ function Skills() {
                                 <h3 className='category-title' data-aos="fade-left" data-aos-duration="1000">
                                     {category.category}
                                 </h3>
-                                <p className='category-description' data-aos="fade-right" data-aos-duration="1000">
-                                    {category.description}
-                                </p>
                             </div>
                             <div className='skills-grid'>
                                 {category.skills.map((skill, skillIndex) => (
@@ -110,8 +108,7 @@ function Skills() {
                     <div className='summary-card'>
                         <h3>Ready to Build Something Amazing?</h3>
                         <p>
-                            With expertise across the full development stack, I'm equipped to tackle complex projects 
-                            and deliver exceptional results. Let's discuss how we can bring your ideas to life.
+                            Let's discuss how we can bring your ideas to life.
                         </p>
                     </div>
                 </div>

@@ -59,9 +59,11 @@ function Home() {
                                 I transform ideas into powerful, scalable web and mobile applications with modern technologies and clean code.
                             </p>
                             
-                            <a href='/#contactme' className='cta-button leftitem'>
-                                Let's Build Something Amazing
-                            </a>
+                            <div className='shadow-wrapper'>
+                                <a href='/#contactme' className='cta-button  leftitem'>
+                                    Let's Build Something Amazing
+                                </a>
+                            </div>
                         </div>
                     </div>
                     
