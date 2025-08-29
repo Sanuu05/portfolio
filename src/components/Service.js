@@ -44,7 +44,7 @@ function Service() {
                 
                 <div className='service-grid'>
                     {servicelist?.map((service, index) => (
-                        <div key={index} className='service-card' data-aos="fade-up" data-aos-duration="1000" data-aos-delay={index * 150}>
+                        <div key={index} className='service-card' data-aos="fade-up" data-aos-duration="1000" data-aos-delay={index * 100}>
                             <div className='service-icon'>
                                 {service.logo}
                             </div>
