@@ -1561,26 +1561,63 @@ nav #links a:nth-child(2){
 
 .footer{
   background-color: #161c29;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 .footer img{
   width: 50px;
 }
 .footer .footleft{
   display: flex;
-  justify-content: left;
+  justify-content: flex-start;
   align-items: center;
 }
 .footer .footright{
   color: white;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   align-items: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .footer .footright p{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  font-size: 14px;
+}
 
+/* Footer Mobile Responsiveness */
+@media (max-width: 768px) {
+  .footer {
+    padding: 15px 0;
+  }
+  
+  .footer .footleft {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .footer .footright {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .footer .footright p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 12px 0;
+  }
+  
+  .footer img {
+    width: 40px;
+  }
+  
+  .footer .footright p {
+    font-size: 11px;
+  }
 }
 
 
@@ -3423,6 +3460,15 @@ margin: 15px 0;
   display: block;
 }
 
+/* CTA Button Text Responsive */
+.cta-text-full {
+  display: inline;
+}
+
+.cta-text-short {
+  display: none;
+}
+
 /* Responsive Home */
 @media (max-width: 768px) {
   .home-section {
@@ -3461,13 +3507,23 @@ margin: 15px 0;
   }
   
   .cta-button {
-    padding: 12px 28px;
-    font-size: 1rem;
+    padding: 12px 20px;
+    font-size: 0.9rem;
     white-space: normal;
     word-wrap: break-word;
     overflow-wrap: break-word;
     text-align: center;
     line-height: 1.3;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  
+  .cta-text-full {
+    display: none;
+  }
+  
+  .cta-text-short {
+    display: inline;
   }
   
   .greeting-line {

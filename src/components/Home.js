@@ -61,7 +61,8 @@ function Home() {
                             
                             <div className='shadow-wrapper'>
                                 <a href='/#contactme' className='cta-button  leftitem'>
-                                    Let's Build Something Amazing
+                                    <span className="cta-text-full">Let's Build Something Amazing</span>
+                                    <span className="cta-text-short">Let's Connect</span>
                                 </a>
                             </div>
                         </div>
