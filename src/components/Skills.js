@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import html from '../components/img/html.png'
 import css from '../components/img/css.png'
 import java from '../components/img/java.png'
@@ -67,9 +67,17 @@ const skillCategories = [
 ]
 
 function Skills() {
+    const [activeFilter, setActiveFilter] = useState('Frontend Development');
+    
+    const filterCategories = ['Frontend Development', 'Backend Development', 'DevOps & Tools'];
+    
+    const filteredCategories = activeFilter 
+        ? skillCategories.filter(category => category.category === activeFilter)
+        : skillCategories;
+
     return (
         <section id='Skill' className='skills-section'>
-            <div className='container'>
+            <div className='container skills-container'>
                 <div className='skills-header' data-aos="fade-up" data-aos-duration="1000">
                     <p className='skills-subtitle'>Skills</p>
                     <h2 className='skills-title'>My Skills</h2>
@@ -78,7 +86,19 @@ function Skills() {
                     </p>
                 </div>
                 
-                {skillCategories.map((category, categoryIndex) => (
+                <div className='skills-filter' data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    {filterCategories.map((filter, index) => (
+                        <button
+                            key={index}
+                            className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
+                            onClick={() => setActiveFilter(filter)}
+                        >
+                            {filter}
+                        </button>
+                    ))}
+                </div>
+                
+                {filteredCategories.map((category, categoryIndex) => (
                     <div key={categoryIndex} className='skill-category-wrapper' data-aos="fade-up" data-aos-duration="1000">
                         <div className='skill-category'>
                             <div className='category-header'>

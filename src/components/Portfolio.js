@@ -185,7 +185,7 @@ function Portfolio() {
     return (
         <section id='portfolio' className='portfolio-section'>
             <div className='portfolio'>
-                <div className='container'>
+                <div className='container portfolio-container'>
                     <div className='portfolio-header' data-aos="fade-up" data-aos-duration="1000">
                         <p className='portfolio-subtitle'>My Work</p>
                         <h2 className='portfolio-title'>Featured Projects</h2>
