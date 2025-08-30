@@ -1,136 +1,119 @@
 import React from 'react';
 
 const TechAnimation3 = () => (
-  <div className='ani'>
-    <svg
-      className="BgAnimation__svg"
-      viewBox="0 0 602 602"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g opacity="0.8">
-        {/* Cloud infrastructure */}
-        <g>
-          <ellipse cx="200" cy="150" rx="60" ry="30" stroke="#4FC3F7" strokeWidth="2" fill="none" />
-          <ellipse cx="180" cy="140" rx="25" ry="15" stroke="#4FC3F7" strokeWidth="2" fill="none" />
-          <ellipse cx="220" cy="140" rx="25" ry="15" stroke="#4FC3F7" strokeWidth="2" fill="none" />
-          <text x="175" y="155" fill="#4FC3F7" fontSize="12" fontFamily="sans-serif">AWS Cloud</text>
-          
-          {/* Data flow to cloud */}
-          <path d="M200 180 Q250 200 300 220" stroke="#4FC3F7" strokeWidth="2" fill="none" markerEnd="url(#cloudArrow)" />
-        </g>
+  <div className="d-flex justify-content-center align-items-center" style={{ height: '400px' }}>
+    <svg width="600" height="400" viewBox="0 0 600 400" className="tech-animation">
+      <defs>
+        {/* DevOps CI/CD gradients */}
+        <linearGradient id="cicdPipeline" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#dc2626" stopOpacity="0.8" />
+          <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#eab308" stopOpacity="0.4" />
+        </linearGradient>
         
-        {/* Docker containers */}
-        <g>
-          <rect x="350" y="200" width="80" height="50" rx="5" stroke="#0DB7ED" strokeWidth="2" fill="none" />
-          <rect x="360" y="210" width="60" height="30" rx="3" stroke="#0DB7ED" strokeWidth="1" fill="#0DB7ED" opacity="0.2" />
-          <text x="375" y="225" fill="#0DB7ED" fontSize="10" fontFamily="monospace">Docker</text>
-          <text x="375" y="238" fill="#0DB7ED" fontSize="10" fontFamily="monospace">Container</text>
-          
-          {/* Container scaling animation */}
-          <rect x="450" y="210" width="60" height="30" rx="3" stroke="#0DB7ED" strokeWidth="1" fill="#0DB7ED" opacity="0.3">
-            <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite" />
+        <linearGradient id="cloudInfra" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#1e40af" stopOpacity="0.8" />
+          <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#60a5fa" stopOpacity="0.4" />
+        </linearGradient>
+        
+        <linearGradient id="monitoring" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#059669" stopOpacity="0.8" />
+          <stop offset="50%" stopColor="#10b981" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#34d399" stopOpacity="0.4" />
+        </linearGradient>
+        
+        {/* DevOps effects */}
+        <filter id="devopsGlow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="2" result="softGlow"/>
+          <feMerge> 
+            <feMergeNode in="softGlow"/>
+            <feMergeNode in="SourceGraphic"/> 
+          </feMerge>
+        </filter>
+        
+        <filter id="infraShadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="1" dy="1" stdDeviation="2" floodColor="#1e293b" floodOpacity="0.2"/>
+        </filter>
+      </defs>
+      
+      <g opacity="0.95">
+        {/* DevOps CI/CD Pipeline */}
+        <g filter="url(#devopsGlow)">
+          {/* CI/CD Pipeline stages */}
+          <rect x="50" y="150" width="80" height="60" rx="8" fill="none" stroke="url(#cicdPipeline)" strokeWidth="2" filter="url(#infraShadow)">
+            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
           </rect>
-        </g>
-        
-        {/* React component tree */}
-        <g stroke="#61DAFB" strokeWidth="2" fill="none">
-          <circle cx="150" cy="300" r="20" />
-          <text x="140" y="305" fill="#61DAFB" fontSize="12" fontFamily="sans-serif">App</text>
+          <text x="70" y="175" fill="#dc2626" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">BUILD</text>
+          <text x="75" y="190" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">STAGE</text>
           
-          <line x1="150" y1="320" x2="120" y2="350" />
-          <line x1="150" y1="320" x2="180" y2="350" />
-          
-          <circle cx="120" cy="360" r="15" />
-          <text x="110" y="365" fill="#61DAFB" fontSize="10" fontFamily="sans-serif">Header</text>
-          
-          <circle cx="180" cy="360" r="15" />
-          <text x="170" y="365" fill="#61DAFB" fontSize="10" fontFamily="sans-serif">Main</text>
-          
-          {/* Component state updates */}
-          <circle cx="150" cy="300" r="25" fill="none" stroke="#61DAFB" opacity="0.5">
-            <animate attributeName="r" values="25;35;25" dur="2s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2s" repeatCount="indefinite" />
-          </circle>
-        </g>
-        
-        {/* API requests visualization */}
-        <g>
-          <rect x="300" y="350" width="200" height="100" rx="10" stroke="#FF9800" strokeWidth="2" fill="none" />
-          <text x="320" y="375" fill="#FF9800" fontSize="14" fontFamily="sans-serif">REST API Gateway</text>
-          
-          {/* HTTP methods */}
-          <rect x="320" y="385" width="40" height="20" rx="3" fill="#4CAF50" />
-          <text x="330" y="398" fill="white" fontSize="10" fontFamily="monospace">GET</text>
-          
-          <rect x="370" y="385" width="40" height="20" rx="3" fill="#2196F3" />
-          <text x="378" y="398" fill="white" fontSize="10" fontFamily="monospace">POST</text>
-          
-          <rect x="420" y="385" width="40" height="20" rx="3" fill="#FF5722" />
-          <text x="430" y="398" fill="white" fontSize="10" fontFamily="monospace">PUT</text>
-          
-          {/* Request flow */}
-          <circle cx="480" cy="395" r="3" fill="#00FF88">
-            <animateTransform
-              attributeName="transform"
-              type="translate"
-              values="0,0; -140,0; 0,0"
-              dur="3s"
-              repeatCount="indefinite"
-            />
-          </circle>
-        </g>
-        
-        {/* Performance metrics */}
-        <g>
-          <rect x="80" y="450" width="150" height="80" rx="8" stroke="#E91E63" strokeWidth="2" fill="none" />
-          <text x="100" y="470" fill="#E91E63" fontSize="12" fontFamily="sans-serif">Performance Monitor</text>
-          
-          {/* CPU usage bar */}
-          <text x="90" y="490" fill="#E91E63" fontSize="10" fontFamily="sans-serif">CPU:</text>
-          <rect x="120" y="482" width="80" height="8" rx="4" stroke="#E91E63" fill="none" />
-          <rect x="120" y="482" width="50" height="8" rx="4" fill="#E91E63" opacity="0.7">
-            <animate attributeName="width" values="50;70;45;60;50" dur="4s" repeatCount="indefinite" />
+          <rect x="160" y="150" width="80" height="60" rx="8" fill="none" stroke="url(#cicdPipeline)" strokeWidth="2" filter="url(#infraShadow)">
+            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="3s" begin="1s" repeatCount="indefinite" />
           </rect>
+          <text x="180" y="175" fill="#f59e0b" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">TEST</text>
+          <text x="180" y="190" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">STAGE</text>
           
-          {/* Memory usage */}
-          <text x="90" y="510" fill="#E91E63" fontSize="10" fontFamily="sans-serif">RAM:</text>
-          <rect x="120" y="502" width="80" height="8" rx="4" stroke="#E91E63" fill="none" />
-          <rect x="120" y="502" width="35" height="8" rx="4" fill="#4CAF50" opacity="0.7" />
-        </g>
-        
-        {/* WebSocket connection */}
-        <g stroke="#9C27B0" strokeWidth="2" fill="none">
-          <path d="M400 120 Q450 100 500 120 Q450 140 400 120" />
-          <circle cx="400" cy="120" r="5" fill="#9C27B0" />
-          <circle cx="500" cy="120" r="5" fill="#9C27B0" />
-          <text x="430" y="110" fill="#9C27B0" fontSize="10" fontFamily="sans-serif">WebSocket</text>
+          <rect x="270" y="150" width="80" height="60" rx="8" fill="none" stroke="url(#cicdPipeline)" strokeWidth="2" filter="url(#infraShadow)">
+            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="3s" begin="2s" repeatCount="indefinite" />
+          </rect>
+          <text x="285" y="175" fill="#eab308" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">DEPLOY</text>
+          <text x="290" y="190" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">STAGE</text>
           
-          {/* Real-time data pulse */}
-          <circle cx="450" cy="120" r="8" fill="none" stroke="#9C27B0" opacity="0.6">
-            <animate attributeName="r" values="8;20;8" dur="2s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2s" repeatCount="indefinite" />
+          {/* Cloud Infrastructure */}
+          <rect x="420" y="80" width="120" height="80" rx="8" fill="none" stroke="url(#cloudInfra)" strokeWidth="2" filter="url(#infraShadow)">
+            <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite" />
+          </rect>
+          <text x="455" y="110" fill="#1e40af" fontSize="14" fontFamily="Arial, sans-serif" fontWeight="600">CLOUD</text>
+          <text x="440" y="125" fill="#6b7280" fontSize="12" fontFamily="Arial, sans-serif">INFRASTRUCTURE</text>
+          <text x="430" y="145" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">Kubernetes • Docker</text>
+          
+          {/* Monitoring & Observability */}
+          <rect x="420" y="240" width="120" height="80" rx="8" fill="none" stroke="url(#monitoring)" strokeWidth="2" filter="url(#infraShadow)">
+            <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="4s" begin="1s" repeatCount="indefinite" />
+          </rect>
+          <text x="450" y="270" fill="#059669" fontSize="14" fontFamily="Arial, sans-serif" fontWeight="600">MONITORING</text>
+          <text x="440" y="285" fill="#6b7280" fontSize="12" fontFamily="Arial, sans-serif">& OBSERVABILITY</text>
+          <text x="430" y="305" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">Prometheus • Grafana</text>
+          
+          {/* Pipeline Flow */}
+          <path d="M130 180 L160 180" stroke="url(#cicdPipeline)" strokeWidth="2" strokeDasharray="4,4" opacity="0.7">
+            <animate attributeName="stroke-dashoffset" values="0;-8" dur="3s" repeatCount="indefinite" />
+          </path>
+          <path d="M240 180 L270 180" stroke="url(#cicdPipeline)" strokeWidth="2" strokeDasharray="4,4" opacity="0.7">
+            <animate attributeName="stroke-dashoffset" values="0;-8" dur="3s" begin="1s" repeatCount="indefinite" />
+          </path>
+          <path d="M350 180 L420 120" stroke="url(#cloudInfra)" strokeWidth="2" strokeDasharray="4,4" opacity="0.7">
+            <animate attributeName="stroke-dashoffset" values="0;-8" dur="3s" begin="2s" repeatCount="indefinite" />
+          </path>
+          
+          {/* Git Repository */}
+          <rect x="50" y="60" width="100" height="60" rx="8" fill="none" stroke="url(#monitoring)" strokeWidth="2" filter="url(#infraShadow)">
+            <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="4s" begin="0.5s" repeatCount="indefinite" />
+          </rect>
+          <text x="80" y="85" fill="#059669" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">GIT</text>
+          <text x="70" y="100" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">REPOSITORY</text>
+          
+          {/* Performance Metrics */}
+          <rect x="200" y="30" width="160" height="80" rx="6" fill="none" stroke="url(#cicdPipeline)" strokeWidth="2" filter="url(#infraShadow)">
+            <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="5s" repeatCount="indefinite" />
+          </rect>
+          <text x="225" y="50" fill="#dc2626" fontSize="14" fontFamily="Arial, sans-serif" fontWeight="600">DEVOPS METRICS</text>
+          <text x="210" y="70" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">Deploy Frequency: 12/day</text>
+          <text x="210" y="85" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">Lead Time: 2.3 hours</text>
+          <text x="210" y="100" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">MTTR: 15 minutes</text>
+          
+          {/* Status indicators */}
+          <circle cx="345" cy="55" r="4" fill="#10b981" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" />
           </circle>
-        </g>
-        
-        {/* Mobile responsive indicators */}
-        <g>
-          <rect x="450" y="350" width="30" height="50" rx="5" stroke="#795548" strokeWidth="2" fill="none" />
-          <rect x="455" y="355" width="20" height="30" rx="2" stroke="#795548" strokeWidth="1" fill="#795548" opacity="0.2" />
-          <circle cx="465" cy="390" r="3" stroke="#795548" strokeWidth="1" fill="none" />
-          
-          <rect x="490" y="340" width="50" height="35" rx="3" stroke="#795548" strokeWidth="2" fill="none" />
-          <rect x="495" y="345" width="40" height="20" rx="2" stroke="#795548" strokeWidth="1" fill="#795548" opacity="0.2" />
-          
-          <text x="460" y="420" fill="#795548" fontSize="10" fontFamily="sans-serif">Responsive</text>
+          <circle cx="525" cy="125" r="4" fill="#3b82f6" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" begin="1s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="525" cy="285" r="4" fill="#059669" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" begin="2s" repeatCount="indefinite" />
+          </circle>
         </g>
       </g>
-      
-      <defs>
-        <marker id="cloudArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-          <polygon points="0 0, 10 3.5, 0 7" fill="#4FC3F7" />
-        </marker>
-      </defs>
     </svg>
   </div>
 );

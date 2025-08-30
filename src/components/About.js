@@ -22,15 +22,15 @@ function About() {
                         </h2>
                     </div>
                     
-                    {/* First Section: Image Left, Text Right */}
+                    {/* First Section: Mobile-first responsive layout */}
                     <div className='row align-items-center mb-5'>
-                        <div className='col-md-6' data-aos="fade-right" data-aos-duration="1000">
-                            <div className='about-animation-container'>
+                        <div className='col-md-6 order-md-1 order-2' data-aos="fade-right" data-aos-duration="1000">
+                            <div className='about-animation-container mb-4 mb-md-0'>
                                 <TechAnimation1 />
                             </div>
                         </div>
                         
-                        <div className='col-md-6' data-aos="fade-left" data-aos-duration="1000">
+                        <div className='col-md-6 order-md-2 order-1' data-aos="fade-left" data-aos-duration="1000">
                             <div className='about-content'>
                                 <p className='lead-text'>
                                     Hello there! I'm <strong>Shantanu Saha</strong>, a passionate Full-Stack Developer specializing in MERN Stack and React Native. With over 2 years of experience, I create seamless digital experiences across all platforms.
@@ -43,9 +43,9 @@ function About() {
                         </div>
                     </div>
                     
-                    {/* Second Section: Text Left, Image Right */}
+                    {/* Second Section: Mobile-optimized layout */}
                     <div className='row align-items-center mb-5'>
-                        <div className='col-md-6' data-aos="fade-right" data-aos-duration="1000">
+                        <div className='col-md-6 order-1' data-aos="fade-right" data-aos-duration="1000">
                             <div className='about-content'>
                                 <p>
                                     The Vantara project showcases my ability to handle <span className='highlight'>enterprise-scale applications</span> with complex data relationships, real-time updates, and multi-user access controls. I've implemented features like animal health tracking, breeding programs, rescue coordination, and facility maintenance scheduling.
@@ -57,22 +57,22 @@ function About() {
                             </div>
                         </div>
                         
-                        <div className='col-md-6' data-aos="fade-left" data-aos-duration="1000">
-                            <div className='about-animation-container'>
+                        <div className='col-md-6 order-2' data-aos="fade-left" data-aos-duration="1000">
+                            <div className='about-animation-container mt-4 mt-md-0'>
                                 <TechAnimation2 />
                             </div>
                         </div>
                     </div>
                     
-                    {/* Third Section: Image Left, Text Right */}
+                    {/* Third Section: Consistent mobile layout */}
                     <div className='row align-items-center'>
-                        <div className='col-md-6' data-aos="fade-right" data-aos-duration="1000">
-                            <div className='about-animation-container'>
+                        <div className='col-md-6 order-md-1 order-2' data-aos="fade-right" data-aos-duration="1000">
+                            <div className='about-animation-container mb-4 mb-md-0'>
                                 <TechAnimation3 />
                             </div>
                         </div>
                         
-                        <div className='col-md-6' data-aos="fade-left" data-aos-duration="1000">
+                        <div className='col-md-6 order-md-2 order-1' data-aos="fade-left" data-aos-duration="1000">
                             <div className='about-content'>
                                 <p>
                                     My technical expertise spans <span className='highlight'>Frontend</span> (React.js, React Native, Next.js, TypeScript), <span className='highlight'>Backend</span> (Node.js, Express.js, Django), <span className='highlight'>Databases</span> (MongoDB, MySQL, Redis, Firebase), and <span className='highlight'>DevOps</span> (AWS, Docker, Git). I consistently deliver 40% performance improvements and maintain 99.9% uptime.

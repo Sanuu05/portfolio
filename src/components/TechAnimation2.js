@@ -1,252 +1,131 @@
 import React from 'react';
 
 const TechAnimation2 = () => (
-  <div className='ani'>
-    <svg
-      className="BgAnimation__svg"
-      viewBox="0 0 602 602"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+  <div className="d-flex justify-content-center align-items-center" style={{ height: '400px' }}>
+    <svg width="600" height="400" viewBox="0 0 600 400" className="tech-animation">
       <defs>
-        {/* Advanced code editor gradients */}
-        <linearGradient id="codeGlow" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#FF6B6B" stopOpacity="0.8" />
-          <stop offset="50%" stopColor="#4ECDC4" stopOpacity="1" />
-          <stop offset="100%" stopColor="#FFE66D" stopOpacity="0.8" />
+        {/* Backend server architecture gradients */}
+        <linearGradient id="serverCore" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#1e40af" stopOpacity="0.9" />
+          <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.7" />
+          <stop offset="100%" stopColor="#60a5fa" stopOpacity="0.5" />
         </linearGradient>
         
-        <radialGradient id="terminalGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#00FF41" stopOpacity="1" />
-          <stop offset="100%" stopColor="#00FF41" stopOpacity="0" />
+        <linearGradient id="apiFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#059669" stopOpacity="0.9" />
+          <stop offset="50%" stopColor="#10b981" stopOpacity="0.7" />
+          <stop offset="100%" stopColor="#34d399" stopOpacity="0.5" />
+        </linearGradient>
+        
+        <radialGradient id="systemCore" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#1e3a8a" stopOpacity="0.8" />
+          <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.5" />
+          <stop offset="100%" stopColor="#60a5fa" stopOpacity="0.2" />
         </radialGradient>
         
-        {/* Advanced filters */}
-        <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+        {/* Subtle professional effects */}
+        <filter id="enterpriseGlow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="2" result="softGlow"/>
           <feMerge> 
-            <feMergeNode in="coloredBlur"/>
-            <feMergeNode in="SourceGraphic"/>
+            <feMergeNode in="softGlow"/>
+            <feMergeNode in="SourceGraphic"/> 
           </feMerge>
         </filter>
         
-        <filter id="screenGlow" x="-100%" y="-100%" width="300%" height="300%">
-          <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
-          <feMerge> 
-            <feMergeNode in="coloredBlur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
+        <filter id="businessShadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="1" dy="1" stdDeviation="2" floodColor="#1e293b" floodOpacity="0.2"/>
         </filter>
-        
-        {/* Typing animation gradient */}
-        <linearGradient id="typingEffect" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#4ECDC4" stopOpacity="0" />
-          <stop offset="50%" stopColor="#4ECDC4" stopOpacity="1" />
-          <stop offset="100%" stopColor="#4ECDC4" stopOpacity="0" />
-          <animateTransform
-            attributeName="gradientTransform"
-            type="translate"
-            values="-200 0; 200 0; -200 0"
-            dur="3s"
-            repeatCount="indefinite"
-          />
-        </linearGradient>
       </defs>
       
-      <g opacity="0.9">
-        {/* Advanced IDE Code Editor */}
-        <g filter="url(#screenGlow)">
-          {/* Editor window */}
-          <rect x="80" y="120" width="440" height="200" rx="8" stroke="#333" strokeWidth="2" fill="#1a1a1a" opacity="0.9" />
-          <rect x="80" y="120" width="440" height="30" rx="8" fill="#2d2d2d" />
-          
-          {/* Window controls */}
-          <circle cx="100" cy="135" r="6" fill="#ff5f57" />
-          <circle cx="120" cy="135" r="6" fill="#ffbd2e" />
-          <circle cx="140" cy="135" r="6" fill="#28ca42" />
-          
-          {/* Tab */}
-          <rect x="160" y="125" width="80" height="20" fill="#3c3c3c" />
-          <text x="170" y="138" fill="#fff" fontSize="10" fontFamily="monospace">App.js</text>
-          
-          {/* Line numbers */}
-          <g fill="#666" fontSize="10" fontFamily="monospace">
-            <text x="90" y="170">1</text>
-            <text x="90" y="185">2</text>
-            <text x="90" y="200">3</text>
-            <text x="90" y="215">4</text>
-            <text x="90" y="230">5</text>
-            <text x="90" y="245">6</text>
-            <text x="90" y="260">7</text>
-            <text x="90" y="275">8</text>
-          </g>
-          
-          {/* Syntax highlighted code */}
-          <g fontSize="12" fontFamily="monospace" filter="url(#neonGlow)">
-            <text x="110" y="170" fill="#ff6b6b">import</text>
-            <text x="150" y="170" fill="#4ecdc4">React</text>
-            <text x="185" y="170" fill="#ff6b6b">from</text>
-            <text x="215" y="170" fill="#ffe66d">'react'</text>
-            
-            <text x="110" y="200" fill="#ff6b6b">const</text>
-            <text x="145" y="200" fill="#4ecdc4">App</text>
-            <text x="170" y="200" fill="#fff">=</text>
-            <text x="180" y="200" fill="#ff6b6b">()</text>
-            <text x="200" y="200" fill="#ff6b6b">=&gt;</text>
-            <text x="220" y="200" fill="#fff">&#123;</text>
-            
-            <text x="120" y="215" fill="#ff6b6b">return</text>
-            <text x="160" y="215" fill="#fff">(</text>
-            
-            <text x="130" y="230" fill="#4ecdc4">{'<div'}</text>
-            <text x="170" y="230" fill="#ffe66d">className</text>
-            <text x="230" y="230" fill="#fff">=</text>
-            <text x="240" y="230" fill="#ffe66d">"app"</text>
-            <text x="280" y="230" fill="#4ecdc4">{'>'}</text>
-            
-            <text x="140" y="245" fill="#4ecdc4">{'<h1>'}</text>
-            <text x="175" y="245" fill="#fff">Hello World</text>
-            <text x="250" y="245" fill="#4ecdc4">{'</h1>'}</text>
-            
-            <text x="130" y="260" fill="#4ecdc4">{'</div>'}</text>
-            
-            <text x="120" y="275" fill="#fff">)</text>
-            <text x="130" y="275" fill="#fff">&#125;</text>
-          </g>
-          
-          {/* Animated typing cursor */}
-          <rect x="140" y="268" width="2" height="12" fill="#00ff88">
-            <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite" />
+      <g opacity="0.95">
+        {/* Backend Server Architecture */}
+        <g filter="url(#enterpriseGlow)">
+          {/* Main server core */}
+          <rect x="250" y="150" width="100" height="100" rx="8" fill="none" stroke="url(#serverCore)" strokeWidth="3" filter="url(#businessShadow)">
+            <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite" />
           </rect>
+          <rect x="260" y="160" width="80" height="80" rx="6" fill="url(#serverCore)" opacity="0.2">
+            <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite" />
+          </rect>
+          <text x="275" y="175" fill="#1e40af" fontSize="14" fontFamily="Arial, sans-serif" fontWeight="600">SERVER CORE</text>
+          <text x="290" y="210" fill="#6b7280" fontSize="12" fontFamily="Arial, sans-serif">CORE</text>
           
-          {/* Code completion popup */}
-          <g opacity="0.8">
-            <rect x="200" y="280" width="120" height="60" rx="4" fill="#2d2d2d" stroke="#4ecdc4" strokeWidth="1" />
-            <text x="210" y="295" fill="#4ecdc4" fontSize="10" fontFamily="monospace">useState</text>
-            <text x="210" y="308" fill="#fff" fontSize="10" fontFamily="monospace">useEffect</text>
-            <text x="210" y="321" fill="#fff" fontSize="10" fontFamily="monospace">useContext</text>
-            <text x="210" y="334" fill="#fff" fontSize="10" fontFamily="monospace">useReducer</text>
-            
-            <animate attributeName="opacity" values="0;0.8;0.8;0" dur="4s" repeatCount="indefinite" />
-          </g>
+          {/* API Gateway */}
+          <rect x="100" y="80" width="90" height="60" rx="6" fill="none" stroke="url(#apiFlow)" strokeWidth="2" filter="url(#businessShadow)">
+            <animate attributeName="stroke-opacity" values="0.5;0.9;0.5" dur="3s" repeatCount="indefinite" />
+          </rect>
+          <text x="110" y="85" fill="#10b981" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">API</text>
+          <text x="100" y="100" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">GATEWAY</text>
+          
+          {/* Database */}
+          <rect x="410" y="80" width="90" height="60" rx="6" fill="none" stroke="url(#serverCore)" strokeWidth="2" filter="url(#businessShadow)">
+            <animate attributeName="stroke-opacity" values="0.5;0.9;0.5" dur="3s" begin="1s" repeatCount="indefinite" />
+          </rect>
+          <text x="445" y="85" fill="#dc2626" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">DATABASE</text>
+          <text x="450" y="100" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">CLUSTER</text>
+          
+          {/* Authentication Service */}
+          <rect x="100" y="260" width="90" height="60" rx="6" fill="none" stroke="url(#apiFlow)" strokeWidth="2" filter="url(#businessShadow)">
+            <animate attributeName="stroke-opacity" values="0.5;0.9;0.5" dur="3s" begin="2s" repeatCount="indefinite" />
+          </rect>
+          <text x="110" y="295" fill="#8b5cf6" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">AUTH</text>
+          <text x="100" y="310" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">SERVICE</text>
+          
+          {/* Cache Layer */}
+          <rect x="410" y="260" width="90" height="60" rx="6" fill="none" stroke="url(#serverCore)" strokeWidth="2" filter="url(#businessShadow)">
+            <animate attributeName="stroke-opacity" values="0.5;0.9;0.5" dur="3s" begin="0.5s" repeatCount="indefinite" />
+          </rect>
+          <text x="450" y="295" fill="#f59e0b" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">CACHE</text>
+          <text x="450" y="310" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">LAYER</text>
         </g>
         
-        {/* Advanced API Dashboard */}
-        <g filter="url(#neonGlow)">
-          <rect x="350" y="100" width="200" height="150" rx="8" stroke="#4ecdc4" strokeWidth="2" fill="#0a0a0a" opacity="0.9" />
-          <text x="360" y="120" fill="#4ecdc4" fontSize="14" fontFamily="sans-serif">API Monitor</text>
+        {/* API Data Flow */}
+        <g filter="url(#enterpriseGlow)">
+          {/* API connections */}
+          <path d="M190 110 L250 150" stroke="url(#apiFlow)" strokeWidth="2" strokeDasharray="4,4" opacity="0.7">
+            <animate attributeName="stroke-dashoffset" values="0;-8" dur="3s" repeatCount="indefinite" />
+          </path>
+          <path d="M350 150 L410 110" stroke="url(#serverCore)" strokeWidth="2" strokeDasharray="4,4" opacity="0.7">
+            <animate attributeName="stroke-dashoffset" values="0;-8" dur="3s" begin="1s" repeatCount="indefinite" />
+          </path>
+          <path d="M190 290 L250 250" stroke="url(#apiFlow)" strokeWidth="2" strokeDasharray="4,4" opacity="0.7">
+            <animate attributeName="stroke-dashoffset" values="0;-8" dur="3s" begin="2s" repeatCount="indefinite" />
+          </path>
+          <path d="M350 250 L410 290" stroke="url(#serverCore)" strokeWidth="2" strokeDasharray="4,4" opacity="0.7">
+            <animate attributeName="stroke-dashoffset" values="0;-8" dur="3s" begin="0.5s" repeatCount="indefinite" />
+          </path>
+        </g>
+        
+        {/* Load Balancer */}
+        <g filter="url(#enterpriseGlow)">
+          <rect x="50" y="350" width="120" height="40" rx="6" fill="none" stroke="url(#apiFlow)" strokeWidth="2" filter="url(#businessShadow)">
+            <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite" />
+          </rect>
+          <text x="75" y="370" fill="#10b981" fontSize="11" fontFamily="Arial, sans-serif" fontWeight="500">LOAD BALANCER</text>
           
-          {/* Real-time metrics */}
-          <g fontSize="11" fontFamily="monospace">
-            <text x="360" y="140" fill="#00ff88">GET /api/users</text>
-            <text x="480" y="140" fill="#00ff88">200</text>
-            <text x="510" y="140" fill="#00ff88">1.2ms</text>
-            
-            <text x="360" y="155" fill="#00ff88">POST /api/data</text>
-            <text x="480" y="155" fill="#00ff88">201</text>
-            <text x="510" y="155" fill="#00ff88">2.1ms</text>
-            
-            <text x="360" y="170" fill="#ffd700">PUT /api/update</text>
-            <text x="480" y="170" fill="#ffd700">429</text>
-            <text x="510" y="170" fill="#ffd700">5.3ms</text>
-            
-            <text x="360" y="185" fill="#ff4081">DELETE /api/item</text>
-            <text x="480" y="185" fill="#ff4081">500</text>
-            <text x="510" y="185" fill="#ff4081">timeout</text>
-          </g>
+          <rect x="430" y="350" width="120" height="40" rx="6" fill="none" stroke="url(#serverCore)" strokeWidth="2" filter="url(#businessShadow)">
+            <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="4s" begin="2s" repeatCount="indefinite" />
+          </rect>
+          <text x="460" y="370" fill="#dc2626" fontSize="11" fontFamily="Arial, sans-serif" fontWeight="500">MONITORING</text>
+        </g>
+        
+        {/* Server Metrics */}
+        <g filter="url(#enterpriseGlow)">
+          <rect x="220" y="30" width="160" height="80" rx="6" fill="none" stroke="url(#serverCore)" strokeWidth="2" filter="url(#businessShadow)">
+            <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="5s" repeatCount="indefinite" />
+          </rect>
+          <text x="225" y="50" fill="#1e40af" fontSize="14" fontFamily="Arial, sans-serif" fontWeight="600">SERVER METRICS</text>
           
-          {/* Request rate visualization */}
-          <g>
-            <text x="360" y="205" fill="#4ecdc4" fontSize="10">Requests/sec:</text>
-            <rect x="360" y="210" width="150" height="8" rx="4" stroke="#4ecdc4" fill="none" />
-            <rect x="360" y="210" width="90" height="8" rx="4" fill="#00ff88" opacity="0.7">
-              <animate attributeName="width" values="90;120;75;110;90" dur="3s" repeatCount="indefinite" />
-            </rect>
-            
-            {/* Live counter */}
-            <text x="520" y="218" fill="#00ff88" fontSize="10" fontFamily="monospace">
-              <animate attributeName="fill" values="#00ff88;#4ecdc4;#00ff88" dur="1s" repeatCount="indefinite" />
-              247
-            </text>
-          </g>
+          <text x="230" y="70" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">CPU: 45%</text>
+          <text x="230" y="85" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">Memory: 2.1GB</text>
+          <text x="230" y="100" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">Requests/sec: 1,247</text>
           
-          {/* Error rate indicator */}
-          <circle cx="530" cy="235" r="6" fill="#ff4081" opacity="0.8">
-            <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite" />
+          {/* Status indicator */}
+          <circle cx="365" cy="55" r="4" fill="#10b981" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" />
           </circle>
-          <text x="540" y="240" fill="#ff4081" fontSize="9">3.2% errors</text>
-        </g>
-        
-        {/* Database connections */}
-        <g stroke="#9D4EDD" strokeWidth="2" fill="none">
-          <rect x="100" y="350" width="80" height="60" rx="8" />
-          <text x="125" y="375" fill="#9D4EDD" fontSize="12" fontFamily="sans-serif">MongoDB</text>
-          <text x="125" y="390" fill="#9D4EDD" fontSize="12" fontFamily="sans-serif">Database</text>
-          
-          <rect x="250" y="350" width="80" height="60" rx="8" />
-          <text x="280" y="375" fill="#9D4EDD" fontSize="12" fontFamily="sans-serif">Redis</text>
-          <text x="280" y="390" fill="#9D4EDD" fontSize="12" fontFamily="sans-serif">Cache</text>
-          
-          {/* Connection lines */}
-          <path d="M180 380 L250 380" markerEnd="url(#arrowhead)" />
-          <path d="M330 380 L400 380" markerEnd="url(#arrowhead)" />
-        </g>
-        
-        {/* Server architecture */}
-        <g>
-          <rect x="400" y="320" width="120" height="80" rx="10" stroke="#FF4081" strokeWidth="2" fill="none" />
-          <text x="430" y="345" fill="#FF4081" fontSize="14" fontFamily="sans-serif">Node.js Server</text>
-          <text x="430" y="365" fill="#FF4081" fontSize="12" fontFamily="sans-serif">Express.js</text>
-          <text x="430" y="380" fill="#FF4081" fontSize="12" fontFamily="sans-serif">REST API</text>
-          
-          {/* Server load indicator */}
-          <rect x="410" y="385" width="100" height="8" rx="4" stroke="#FF4081" fill="none" />
-          <rect x="410" y="385" width="75" height="8" rx="4" fill="#FF4081" opacity="0.6">
-            <animate attributeName="width" values="75;90;75" dur="2s" repeatCount="indefinite" />
-          </rect>
-        </g>
-        
-        {/* Data packets */}
-        <g>
-          <rect x="50" y="300" width="30" height="20" rx="5" fill="#00BFFF" opacity="0.8">
-            <animateTransform
-              attributeName="transform"
-              type="translate"
-              values="0,0; 470,0; 0,0"
-              dur="6s"
-              repeatCount="indefinite"
-            />
-          </rect>
-          
-          <polygon points="60,450 80,450 70,470" fill="#FFD700" opacity="0.8">
-            <animateTransform
-              attributeName="transform"
-              type="translate"
-              values="0,0; 0,-150; 0,0"
-              dur="4s"
-              begin="2s"
-              repeatCount="indefinite"
-            />
-          </polygon>
-        </g>
-        
-        {/* Git branches visualization */}
-        <g stroke="#00FF88" strokeWidth="2" fill="none">
-          <path d="M80 500 Q150 480 220 500 Q290 520 360 500" />
-          <path d="M150 480 Q180 460 220 480" />
-          <circle cx="80" cy="500" r="5" fill="#00FF88" />
-          <circle cx="220" cy="500" r="5" fill="#00FF88" />
-          <circle cx="360" cy="500" r="5" fill="#00FF88" />
-          <circle cx="220" cy="480" r="4" fill="#FFD700" />
         </g>
       </g>
-      
-      <defs>
-        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-          <polygon points="0 0, 10 3.5, 0 7" fill="#9D4EDD" />
-        </marker>
-      </defs>
     </svg>
   </div>
 );
