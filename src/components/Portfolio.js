@@ -12,8 +12,8 @@ import s3 from './img/s3.png'
 import lambda from './img/lambda.png'
 import vite from './img/vite.png'
 import next from './img/nextjs.svg'
-import threejs from './img/3d.png'
-import savvy from './img/savvy.png'
+import threejs from './img/3d.webp'
+import savvy from './img/savvy.webp'
 import { BsArrowDownCircleFill, BsArrowUpCircleFill, BsFillArrowUpRightCircleFill, BsGithub, BsEye } from "react-icons/bs";
 
 function Portfolio() {
