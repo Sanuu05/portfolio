@@ -48,7 +48,7 @@ function Portfolio() {
             img: threejs,
             des: "An innovative 3D shoe customization platform built with Three.js and React, allowing users to design personalized footwear with real-time 3D visualization, color customization, and interactive design tools.",
             title: "Shoe Customization",
-            url: "https://visionary-boba-2bf892.netlify.app/",
+            url: "https://threejs-shoe-customized.netlify.app/",
             category: "3D/Interactive",
             featured: true,
             skills: [{ name: 'Vite', img: vite }, { name: "ReactJs", img: react }, { name: 'ThreeJs', img: threejs }, { name: 'Material-UI', img: mat }],
