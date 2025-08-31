@@ -11,7 +11,6 @@ import AOS from 'aos'
 import Skills from "./components/Skills";
 import Portfolio from "./components/Portfolio";
 import 'aos/dist/aos.css';
-import Project from "./components/Project";
 function App() {
   AOS.init({
     once: true
