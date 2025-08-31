@@ -33,22 +33,10 @@ function Portfolio() {
             highlights: ["Full-stack E-commerce", "Payment Integration", "Admin Dashboard", "Real-time Updates"]
         },
         {
-            img: port1,
-            des: "A sophisticated restaurant management system with online food ordering, table reservations, real-time order tracking, and integrated payment processing. Features a dynamic menu system and customer review management.",
-            title: "Foodooze",
-            url: "https://github.com/Sanuu05/foodooze",
-            category: "Food & Dining",
-            featured: true,
-            skills: [{ name: "ReactJs", img: react }, { name: 'Bootstrap', img: boot }, { name: "NodeJs", img: node }, { name: "ExpressJS", img: expre }, { name: "MongoDB", img: mongo }, { name: "Redux", img: redux }, { name: 'Razorpay', img: razo }],
-            button: "View Project",
-            github: "https://github.com/yourusername/foodooze",
-            highlights: ["Food Ordering System", "Table Reservations", "Payment Processing", "Real-time Tracking"]
-        },
-        {
             img: threejs,
             des: "An innovative 3D shoe customization platform built with Three.js and React, allowing users to design personalized footwear with real-time 3D visualization, color customization, and interactive design tools.",
             title: "Shoe Customization",
-            url: "https://threejs-shoe-customized.netlify.app/",
+            url: "https://shoecustomized.shantanusaha.in",
             category: "3D/Interactive",
             featured: true,
             skills: [{ name: 'Vite', img: vite }, { name: "ReactJs", img: react }, { name: 'ThreeJs', img: threejs }, { name: 'Material-UI', img: mat }],
@@ -56,6 +44,18 @@ function Portfolio() {
             github: "https://github.com/Sanuu05/3D-Shoe-Customisation",
             highlights: ["3D Visualization", "Real-time Customization", "Interactive Design", "Modern UI/UX"]
         },
+        // {
+        //     img: port1,
+        //     des: "A sophisticated restaurant management system with online food ordering, table reservations, real-time order tracking, and integrated payment processing. Features a dynamic menu system and customer review management.",
+        //     title: "Foodooze",
+        //     url: "https://github.com/Sanuu05/foodooze",
+        //     category: "Food & Dining",
+        //     featured: true,
+        //     skills: [{ name: "ReactJs", img: react }, { name: 'Bootstrap', img: boot }, { name: "NodeJs", img: node }, { name: "ExpressJS", img: expre }, { name: "MongoDB", img: mongo }, { name: "Redux", img: redux }, { name: 'Razorpay', img: razo }],
+        //     button: "View Project",
+        //     github: "https://github.com/yourusername/foodooze",
+        //     highlights: ["Food Ordering System", "Table Reservations", "Payment Processing", "Real-time Tracking"]
+        // },
         // {
         //     img: port13,
         //     des: "A cross-platform React Native mobile application for food delivery featuring real-time order tracking, push notifications, user authentication, and secure payment processing with Stripe integration.",
