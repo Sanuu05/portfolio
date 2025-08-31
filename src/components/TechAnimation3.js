@@ -1,8 +1,8 @@
 import React from 'react';
 
 const TechAnimation3 = () => (
-  <div className="d-flex justify-content-center align-items-center" style={{ height: '400px' }}>
-    <svg width="600" height="400" viewBox="0 0 600 400" className="tech-animation">
+  <div className="d-flex justify-content-center align-items-center tech-animation-container">
+    <svg width="100%" height="100%" viewBox="0 0 600 400" className="tech-animation" preserveAspectRatio="xMidYMid meet">
       <defs>
         {/* DevOps CI/CD gradients */}
         <linearGradient id="cicdPipeline" x1="0%" y1="0%" x2="100%" y2="100%">

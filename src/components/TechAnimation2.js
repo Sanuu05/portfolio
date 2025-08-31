@@ -1,8 +1,8 @@
 import React from 'react';
 
 const TechAnimation2 = () => (
-  <div className="d-flex justify-content-center align-items-center" style={{ height: '400px' }}>
-    <svg width="600" height="400" viewBox="0 0 600 400" className="tech-animation">
+  <div className="d-flex justify-content-center align-items-center" style={{ height: '100%', maxHeight: '400px', width: '100%' }}>
+    <svg width="100%" height="100%" viewBox="0 0 600 400" className="tech-animation" preserveAspectRatio="xMidYMid meet" style={{ maxWidth: '600px', maxHeight: '400px' }}>
       <defs>
         {/* Backend server architecture gradients */}
         <linearGradient id="serverCore" x1="0%" y1="0%" x2="100%" y2="100%">
