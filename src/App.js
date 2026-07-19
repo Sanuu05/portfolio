@@ -1,6 +1,4 @@
-import React from "react";
-import { Route, Routes } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
+import React, { useEffect } from "react";
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -11,10 +9,12 @@ import AOS from 'aos'
 import Skills from "./components/Skills";
 import Portfolio from "./components/Portfolio";
 import 'aos/dist/aos.css';
+
 function App() {
-  AOS.init({
-    once: true
-  });
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
+
   return (
     // <AnimatePresence>
     //   <Routes>

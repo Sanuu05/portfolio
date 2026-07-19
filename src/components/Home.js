@@ -1,10 +1,19 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { gsap } from "gsap";
 import BackgroundAnimation from './BackgroundAnimation';
 import { AiOutlineWhatsApp, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { SiTelegram } from "react-icons/si";
 
+// ─── Profile Photo ────────────────────────────────────────────────────────────
+// Drop your photo into public/profile.jpg (or .png) and update the path below:
+// import profilePhoto from '../../public/profile.jpg'  ← can't import from public
+// Instead we reference it as a URL string (served from /public automatically):
+const PROFILE_PHOTO = '/profile.jpg'
+// ─────────────────────────────────────────────────────────────────────────────
+
 function Home() {
+    const [photoError, setPhotoError] = useState(false)
+
     useEffect(() => {
         var tl = gsap.timeline();
 
@@ -36,11 +45,12 @@ function Home() {
         <section id="homee" className="home-section">
             <div className="container">
                 <div className="home-content">
-                    {/* Mobile Background Animation - Always Visible */}
+                    {/* Mobile Background Animation */}
                     <div className="mobile-bg-animation">
                         <BackgroundAnimation id="mobile-svgr" />
                     </div>
                     
+                    {/* ── Left: Text ── */}
                     <div className="home-left">
                         <div className="home-text-content">
                             <div className="greeting-line" id="smline"></div>
@@ -49,18 +59,17 @@ function Home() {
                             <h1 className="hero-name leftitem">Shantanu Saha</h1>
                             
                             <h2 className="hero-title leftitem">
-                                A passionate <span className="accent-text">Full-Stack Developer</span> specializing in{' '}
-                                <span className="accent-text">MERN Stack</span> and{' '}
-                                <span className="accent-text">React Native</span> from{' '}
+                                <span className="accent-text">Full-Stack &amp; React Native Developer</span> — MERN Stack,{' '}
+                                <span className="accent-text">Next.js</span> &amp; <span className="accent-text">React Native</span> from{' '}
                                 <span className="accent-text">India.</span>
                             </h2>
                             
                             <p className="hero-description leftitem">
-                                I transform ideas into powerful, scalable web and mobile applications with modern technologies and clean code.
+                                3+ years building enterprise-grade web &amp; mobile apps. Currently a Software Engineer at <strong>Trellisys.Net</strong>.
                             </p>
                             
-                            <div className='shadow-wrapper'>
-                                <a href='/#contactme' className='cta-button  leftitem'>
+                            <div className="hero-cta-row leftitem" style={{ marginTop: '10px' }}>
+                                <a href='/#contactme' className='cta-button' style={{ maxWidth: '320px' }}>
                                     <span className="cta-text-full">Let's Build Something Amazing</span>
                                     <span className="cta-text-short">Let's Connect</span>
                                 </a>
@@ -68,11 +77,29 @@ function Home() {
                         </div>
                     </div>
                     
+                    {/* ── Right: Profile Photo + Social Links ── */}
                     <div className="home-right">
-                        <div className="animation-container">
-                            <BackgroundAnimation id="svgr" />
+                        {/* Profile Photo Card */}
+                        <div className="profile-photo-wrapper leftitem">
+                            {!photoError ? (
+                                <img
+                                    src={PROFILE_PHOTO}
+                                    alt="Shantanu Saha"
+                                    className="profile-photo"
+                                    onError={() => setPhotoError(true)}
+                                />
+                            ) : (
+                                /* Fallback: SVG animation when no photo provided */
+                                <div className="animation-container">
+                                    <BackgroundAnimation id="svgr" />
+                                </div>
+                            )}
+                            {/* Decorative ring */}
+                            <div className="photo-ring photo-ring-1"></div>
+                            <div className="photo-ring photo-ring-2"></div>
                         </div>
-                        
+
+                        {/* Social Links */}
                         <div className='social-links-desktop'>
                             <a href='https://api.whatsapp.com/send/?phone=917047416015&text&app_absent=0' target="_blank" rel="noopener noreferrer">
                                 <AiOutlineWhatsApp className="social-icon leftitem" />
@@ -89,6 +116,7 @@ function Home() {
                         </div>
                     </div>
                     
+                    {/* Mobile social links */}
                     <div className='social-links-mobile'>
                         <a href='https://api.whatsapp.com/send/?phone=917047416015&text&app_absent=0' target="_blank" rel="noopener noreferrer">
                             <AiOutlineWhatsApp className="social-icon leftitem" />

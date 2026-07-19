@@ -582,11 +582,10 @@ nav #links a:nth-child(2){
   font-size: 80px;
   margin-bottom: 20px;
 }
-.about p{
+.about p {
   color: whitesmoke;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
-  width: 80%;
 }
 
 /* Enhanced About Section Styles */
@@ -654,7 +653,7 @@ nav #links a:nth-child(2){
   color: #e8e8e8;
   transition: all 0.3s ease;
   font-family: 'Ubuntu', sans-serif;
-  text-align: justify;
+  text-align: left;
 }
 
 .about-content .lead-text {
@@ -706,8 +705,7 @@ nav #links a:nth-child(2){
   transition: all 0.3s ease;
   font-family: 'Ubuntu', sans-serif;
   word-wrap: break-word;
-  hyphens: auto;
-  text-align: justify;
+  text-align: left;
 }
 
 .about-text p .highlight {
@@ -774,12 +772,14 @@ nav #links a:nth-child(2){
 
 .cta-text {
   margin: 0;
-  font-weight: 600;
+  font-family: 'Inter', 'Outfit', sans-serif;
+  font-weight: 500;
   color: #0EFBD8;
   text-align: center;
-  font-size: 1.1rem;
-  text-shadow: 0 0 10px rgba(14, 251, 216, 0.5);
+  font-size: 1rem;
+  text-shadow: 0 0 10px rgba(14, 251, 216, 0.4);
   margin-bottom: 20px;
+  letter-spacing: 0.2px;
 }
 
 /* Resume Download Button Styles */
@@ -831,6 +831,82 @@ nav #links a:nth-child(2){
   box-shadow: 0 4px 15px rgba(243, 102, 55, 0.4);
 }
 
+/* ── About Stats Row ── */
+.about-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(14, 251, 216, 0.15);
+  border-radius: 16px;
+  padding: 24px 32px;
+  margin-bottom: 32px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0 28px;
+}
+
+.stat-number {
+  font-size: 2.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #F36637, #0EFBD8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 48px;
+  background: rgba(14, 251, 216, 0.2);
+  flex-shrink: 0;
+}
+
+/* ── Resume Download Row ── */
+.resume-download {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.resume-btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: #0EFBD8;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid #0EFBD8;
+}
+
+.resume-btn-secondary:hover {
+  background: rgba(14, 251, 216, 0.1);
+  transform: translateY(-2px);
+  color: #0EFBD8;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .about-title {
@@ -852,7 +928,25 @@ nav #links a:nth-child(2){
   .about-cta {
     padding: 20px;
   }
+
+  .about-stats {
+    gap: 16px;
+    padding: 20px 16px;
+  }
+
+  .stat-item {
+    padding: 0 12px;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .stat-divider {
+    display: none;
+  }
 }
+
 
 /* Enhanced Contact Section Styles */
 .contact-section {
@@ -3296,7 +3390,9 @@ margin: 15px 0;
 .home-text-content {
   max-width: 600px;
   width: 100%;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .greeting-line {
@@ -3401,7 +3497,11 @@ margin: 15px 0;
 }
 
 .cta-button {
-  display: inline-block;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: fit-content !important;
+  max-width: 100%;
   background: linear-gradient(135deg, #F36637 0%, #0EFBD8 100%);
   color: #0F1624;
   text-decoration: none;
@@ -3413,16 +3513,9 @@ margin: 15px 0;
   border: 2px solid transparent;
   position: relative;
   overflow: hidden;
-  /* box-shadow: 
-    0 8px 25px rgba(243, 102, 55, 0.3),
-    0 4px 15px rgba(14, 251, 216, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2); */
-  white-space: normal;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  white-space: nowrap;
   text-align: center;
   line-height: 1.3;
-
 }
 
 .cta-button::before {
@@ -3720,6 +3813,108 @@ margin: 15px 0;
 .cta-text-short {
   display: none;
 }
+
+/* ── Hero CTA Row (primary + secondary buttons side by side) ── */
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: 10px;
+  width: auto;
+}
+
+.cta-secondary {
+  background: transparent;
+  border: 2px solid #0EFBD8;
+  color: #0EFBD8;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 1rem;
+}
+
+.cta-secondary:hover {
+  background: rgba(14, 251, 216, 0.1);
+  color: #0EFBD8;
+  border-color: #0EFBD8;
+  transform: translateY(-2px);
+}
+
+/* ── Profile Photo ── */
+.profile-photo-wrapper {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-photo {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid transparent;
+  background: linear-gradient(135deg, #F36637, #0EFBD8) border-box;
+  box-shadow:
+    0 0 30px rgba(14, 251, 216, 0.25),
+    0 0 60px rgba(243, 102, 55, 0.15);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 0 40px rgba(14, 251, 216, 0.4),
+    0 0 80px rgba(243, 102, 55, 0.25);
+}
+
+.photo-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  pointer-events: none;
+}
+
+.photo-ring-1 {
+  width: 310px;
+  height: 310px;
+  border-color: rgba(14, 251, 216, 0.3);
+  animation: ringPulse 3s ease-in-out infinite;
+}
+
+.photo-ring-2 {
+  width: 340px;
+  height: 340px;
+  border-color: rgba(243, 102, 55, 0.2);
+  animation: ringPulse 3s ease-in-out infinite 1.5s;
+}
+
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%       { opacity: 0.8; transform: scale(1.04); }
+}
+
+@media (max-width: 768px) {
+  .profile-photo-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+  .profile-photo {
+    width: 190px;
+    height: 190px;
+  }
+  .photo-ring-1 { width: 210px; height: 210px; }
+  .photo-ring-2 { width: 235px; height: 235px; }
+}
+
 
 /* Responsive Home */
 @media (max-width: 768px) {

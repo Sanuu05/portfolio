@@ -23,6 +23,10 @@ import lambda from '../components/img/lambda.png'
 import s3 from '../components/img/s3.png'
 import nextjs from '../components/img/nextjs.svg'
 import typescript from '../components/img/typescript.svg'
+import figma from '../components/img/figma.png'
+
+const POSTGRES_LOGO = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg'
+const TAILWIND_LOGO = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg'
 
 const skillCategories = [
     {
@@ -30,16 +34,18 @@ const skillCategories = [
         skills: [
             { logo: html, title: 'HTML5' },
             { logo: css, title: 'CSS3' },
+            { logo: TAILWIND_LOGO, title: 'Tailwind CSS' },
             { logo: sass, title: 'SASS' },
             { logo: java, title: 'JavaScript' },
+            { logo: typescript, title: 'TypeScript' },
             { logo: react, title: 'React.js' },
             { logo: react, title: 'React Native' },
             { logo: nextjs, title: 'Next.js' },
-            { logo: typescript, title: 'TypeScript' },
-            { logo: redux, title: 'Redux' },
+            { logo: redux, title: 'Redux Toolkit' },
             { logo: boot, title: 'Bootstrap' },
             { logo: mat, title: 'Material UI' },
-            { logo: vite, title: 'Vite' }
+            { logo: vite, title: 'Vite' },
+            { logo: figma, title: 'Figma' }
         ]
     },
     {
@@ -48,6 +54,7 @@ const skillCategories = [
             { logo: node, title: 'Node.js' },
             { logo: expre, title: 'Express.js' },
             { logo: mongo, title: 'MongoDB' },
+            { logo: POSTGRES_LOGO, title: 'PostgreSQL' },
             { logo: mysql, title: 'MySQL' },
             { logo: fire, title: 'Firebase' },
             { logo: redis, title: 'Redis' }

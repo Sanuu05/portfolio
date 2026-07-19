@@ -1,10 +1,18 @@
 import React, { useState } from 'react'
 import { AiOutlineWhatsApp, AiFillLinkedin, AiOutlineSend, AiFillGithub } from "react-icons/ai";
 import { SiTelegram } from "react-icons/si";
-import Axios from 'axios'
+import emailjs from '@emailjs/browser'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import logo from './img/kogo4.png'
+
+// ─── EmailJS Configuration ───────────────────────────────────────────────────
+// Sign up free at https://www.emailjs.com/
+// Replace the values below with your own EmailJS credentials:
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID'   // e.g. 'service_abc123'
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'  // e.g. 'template_xyz789'
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY'   // e.g. 'AbCdEfGhIjKlMnOp'
+// ─────────────────────────────────────────────────────────────────────────────
 
 function Contact() {
     const [dat, setdat] = useState({
@@ -17,13 +25,23 @@ function Contact() {
         e.preventDefault()
         setIsSubmitting(true)
         try {
-            const { data } = await Axios.post("https://devohut.herokuapp.com/msg/postmsg", dat)
-            toast.success('Message sent successfully! I\'ll get back to you soon. 🚀')
-            setdat({
-                name: '', email: '', mobile: '', message: ''
-            })
+            await emailjs.send(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                {
+                    from_name:    dat.name,
+                    from_email:   dat.email,
+                    phone:        dat.mobile,
+                    message:      dat.message,
+                    to_name:      'Shantanu',
+                },
+                EMAILJS_PUBLIC_KEY
+            )
+            toast.success("Message sent successfully! I'll get back to you soon. 🚀")
+            setdat({ name: '', email: '', mobile: '', message: '' })
         } catch (error) {
-            toast.error('Oops! Something went wrong. Please try again or reach out directly.')
+            console.error('EmailJS error:', error)
+            toast.error('Oops! Something went wrong. Please reach out directly on WhatsApp or LinkedIn.')
         } finally {
             setIsSubmitting(false)
         }
@@ -48,13 +66,13 @@ function Contact() {
                                 
                                 <div className='contact-highlights' data-aos="fade-right" data-aos-duration="1800">
                                     <div className='highlight-item'>
-                                        <span>Open to permanent positions & freelance projects</span>
+                                        <span>Open to permanent positions &amp; freelance projects</span>
                                     </div>
                                     <div className='highlight-item'>
-                                        <span>Quick response time & professional communication</span>
+                                        <span>Quick response time &amp; professional communication</span>
                                     </div>
                                     <div className='highlight-item'>
-                                        <span>Committed to quality delivery & long-term success</span>
+                                        <span>Committed to quality delivery &amp; long-term success</span>
                                     </div>
                                 </div>
                             </div>

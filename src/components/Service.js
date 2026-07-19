@@ -19,8 +19,8 @@ const servicelist = [
     {
         logo:<MdDevices/>,
         title:"E-Commerce & Payment Systems",
-        des:'Creating secure, scalable e-commerce platforms with integrated payment gateways. Built token shops, POS systems, and inventory management solutions. Expertise in Stripe, PayPal, and custom payment integrations.',
-        highlights: ["Secure Payments", "POS Systems", "Inventory Management", "Payment Gateways"]
+        des:'Creating secure, scalable e-commerce platforms with integrated payment gateways. Built full-featured online stores, POS systems, and inventory management solutions with Razorpay integration. Expert in cart management, order tracking, and admin dashboards.',
+        highlights: ["Secure Payments", "POS Systems", "Inventory Management", "Razorpay Integration"]
     },
     {
         logo:<MdShoppingCart/>,
