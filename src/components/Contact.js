@@ -60,9 +60,9 @@ function Contact() {
                                 <h2 className='contact-title' data-aos="fade-right" data-aos-duration="1200">
                                     Ready to Build Something Amazing?
                                 </h2>
-                                <h3 className='contact-description' data-aos="fade-right" data-aos-duration="1500">
+                                <p className='contact-description' data-aos="fade-right" data-aos-duration="1500">
                                     I'm passionate about turning your ideas into reality. Whether you need a website, mobile app, or custom solution, let's discuss how I can help bring your vision to life.
-                                </h3>
+                                </p>
                                 
                                 <div className='contact-highlights' data-aos="fade-right" data-aos-duration="1800">
                                     <div className='highlight-item'>

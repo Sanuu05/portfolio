@@ -1,19 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { gsap } from "gsap";
-import BackgroundAnimation from './BackgroundAnimation';
+import HeroAnimation from './HeroAnimation';
 import { AiOutlineWhatsApp, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { SiTelegram } from "react-icons/si";
 
-// ─── Profile Photo ────────────────────────────────────────────────────────────
-// Drop your photo into public/profile.jpg (or .png) and update the path below:
-// import profilePhoto from '../../public/profile.jpg'  ← can't import from public
-// Instead we reference it as a URL string (served from /public automatically):
-const PROFILE_PHOTO = '/profile.jpg'
-// ─────────────────────────────────────────────────────────────────────────────
-
 function Home() {
-    const [photoError, setPhotoError] = useState(false)
-
     useEffect(() => {
         var tl = gsap.timeline();
 
@@ -45,11 +36,6 @@ function Home() {
         <section id="homee" className="home-section">
             <div className="container">
                 <div className="home-content">
-                    {/* Mobile Background Animation */}
-                    <div className="mobile-bg-animation">
-                        <BackgroundAnimation id="mobile-svgr" />
-                    </div>
-                    
                     {/* ── Left: Text ── */}
                     <div className="home-left">
                         <div className="home-text-content">
@@ -69,34 +55,20 @@ function Home() {
                             </p>
                             
                             <div className="hero-cta-row leftitem" style={{ marginTop: '10px' }}>
-                                <a href='/#contactme' className='cta-button' style={{ maxWidth: '320px' }}>
+                                <a href='/#contactme' className='cta-button' id="hero-cta-btn">
+                                    <span className="cta-shimmer" />
                                     <span className="cta-text-full">Let's Build Something Amazing</span>
                                     <span className="cta-text-short">Let's Connect</span>
+                                    <span className="cta-arrow">→</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                     
-                    {/* ── Right: Profile Photo + Social Links ── */}
+                    {/* ── Right: WOW Animated Orbital Illustration ── */}
                     <div className="home-right">
-                        {/* Profile Photo Card */}
-                        <div className="profile-photo-wrapper leftitem">
-                            {!photoError ? (
-                                <img
-                                    src={PROFILE_PHOTO}
-                                    alt="Shantanu Saha"
-                                    className="profile-photo"
-                                    onError={() => setPhotoError(true)}
-                                />
-                            ) : (
-                                /* Fallback: SVG animation when no photo provided */
-                                <div className="animation-container">
-                                    <BackgroundAnimation id="svgr" />
-                                </div>
-                            )}
-                            {/* Decorative ring */}
-                            <div className="photo-ring photo-ring-1"></div>
-                            <div className="photo-ring photo-ring-2"></div>
+                        <div className="hero-illustration leftitem">
+                            <HeroAnimation />
                         </div>
 
                         {/* Social Links */}

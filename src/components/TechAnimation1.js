@@ -1,142 +1,134 @@
 import React from 'react';
 
+/**
+ * AboutIllustration1 — Animated developer stats dashboard card.
+ * Shows live-updating commit graph, lines of code counter,
+ * and project stats — like a personal GitHub dashboard.
+ */
 const TechAnimation1 = () => (
-  <div className="d-flex justify-content-center align-items-center tech-animation-container">
-    <svg width="100%" height="100%" viewBox="0 0 600 400" className="tech-animation" preserveAspectRatio="xMidYMid meet">
+  <div className="ab-illu-wrapper">
+    <svg viewBox="0 0 460 340" className="ab-illu-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        {/* Front-end UI/UX gradients */}
-        <linearGradient id="uiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.9" />
-          <stop offset="50%" stopColor="#60a5fa" stopOpacity="0.7" />
-          <stop offset="100%" stopColor="#93c5fd" stopOpacity="0.5" />
+        <linearGradient id="ab1-card" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#1a2540"/>
+          <stop offset="100%" stopColor="#111827"/>
         </linearGradient>
-        
-        <linearGradient id="componentFlow" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#10b981" stopOpacity="0.8" />
-          <stop offset="50%" stopColor="#34d399" stopOpacity="0.6" />
-          <stop offset="100%" stopColor="#6ee7b7" stopOpacity="0.4" />
+        <linearGradient id="ab1-orange" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#F36637"/>
+          <stop offset="100%" stopColor="#ff8a50"/>
         </linearGradient>
-        
-        <linearGradient id="responsiveDesign" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.8" />
-          <stop offset="50%" stopColor="#a78bfa" stopOpacity="0.6" />
-          <stop offset="100%" stopColor="#c4b5fd" stopOpacity="0.4" />
+        <linearGradient id="ab1-teal" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#0EFBD8"/>
+          <stop offset="100%" stopColor="#06d6b8"/>
         </linearGradient>
-        
-        {/* Professional UI effects */}
-        <filter id="uiGlow" x="-30%" y="-30%" width="160%" height="160%">
-          <feGaussianBlur stdDeviation="2" result="softGlow"/>
-          <feMerge> 
-            <feMergeNode in="softGlow"/>
-            <feMergeNode in="SourceGraphic"/> 
-          </feMerge>
+        <filter id="ab1-glow">
+          <feGaussianBlur stdDeviation="4" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
         </filter>
-        
-        <filter id="designShadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="1" dy="2" stdDeviation="2" floodColor="#1e293b" floodOpacity="0.2"/>
+        <filter id="ab1-shadow">
+          <feDropShadow dx="0" dy="8" stdDeviation="14" floodColor="#000" floodOpacity="0.5"/>
         </filter>
       </defs>
-      
-      <g opacity="0.95">
-        {/* Front-end UI Components */}
-        <g filter="url(#uiGlow)">
-          {/* Main UI Container */}
-          <rect x="200" y="120" width="200" height="160" rx="12" fill="none" stroke="url(#uiGradient)" strokeWidth="3" filter="url(#designShadow)">
-            <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite" />
-          </rect>
-          <rect x="210" y="130" width="180" height="140" rx="8" fill="url(#uiGradient)" opacity="0.1">
-            <animate attributeName="opacity" values="0.1;0.3;0.1" dur="4s" repeatCount="indefinite" />
-          </rect>
-          <text x="270" y="150" fill="#3b82f6" fontSize="14" fontFamily="Arial, sans-serif" fontWeight="600">UI FRAMEWORK</text>
-          
-          {/* React Components */}
-          <rect x="80" y="60" width="100" height="70" rx="8" fill="none" stroke="url(#componentFlow)" strokeWidth="2" filter="url(#designShadow)">
-            <animate attributeName="stroke-opacity" values="0.5;0.9;0.5" dur="3s" repeatCount="indefinite" />
-          </rect>
-          <text x="110" y="85" fill="#10b981" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">REACT</text>
-          <text x="95" y="100" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">COMPONENTS</text>
-          
-          <rect x="420" y="60" width="100" height="70" rx="8" fill="none" stroke="url(#responsiveDesign)" strokeWidth="2" filter="url(#designShadow)">
-            <animate attributeName="stroke-opacity" values="0.5;0.9;0.5" dur="3s" begin="1s" repeatCount="indefinite" />
-          </rect>
-          <text x="450" y="85" fill="#8b5cf6" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">CSS</text>
-          <text x="435" y="100" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">ANIMATIONS</text>
-          
-          <rect x="80" y="270" width="100" height="70" rx="8" fill="none" stroke="url(#uiGradient)" strokeWidth="2" filter="url(#designShadow)">
-            <animate attributeName="stroke-opacity" values="0.5;0.9;0.5" dur="3s" begin="2s" repeatCount="indefinite" />
-          </rect>
-          <text x="110" y="295" fill="#3b82f6" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">STATE</text>
-          <text x="95" y="310" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">MANAGEMENT</text>
-          
-          <rect x="420" y="270" width="100" height="70" rx="8" fill="none" stroke="url(#componentFlow)" strokeWidth="2" filter="url(#designShadow)">
-            <animate attributeName="stroke-opacity" values="0.5;0.9;0.5" dur="3s" begin="0.5s" repeatCount="indefinite" />
-          </rect>
-          <text x="440" y="295" fill="#10b981" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">RESPONSIVE</text>
-          <text x="450" y="310" fill="#6b7280" fontSize="11" fontFamily="Arial, sans-serif">DESIGN</text>
-        </g>
-        
-        {/* Component Data Flow */}
-        <g filter="url(#uiGlow)">
-          {/* Component connections */}
-          <path d="M180 95 L200 150" stroke="url(#componentFlow)" strokeWidth="2" strokeDasharray="4,4" opacity="0.7">
-            <animate attributeName="stroke-dashoffset" values="0;-8" dur="3s" repeatCount="indefinite" />
-          </path>
-          <path d="M400 150 L420 95" stroke="url(#responsiveDesign)" strokeWidth="2" strokeDasharray="4,4" opacity="0.7">
-            <animate attributeName="stroke-dashoffset" values="0;-8" dur="3s" begin="1s" repeatCount="indefinite" />
-          </path>
-          <path d="M180 305 L200 280" stroke="url(#uiGradient)" strokeWidth="2" strokeDasharray="4,4" opacity="0.7">
-            <animate attributeName="stroke-dashoffset" values="0;-8" dur="3s" begin="2s" repeatCount="indefinite" />
-          </path>
-          <path d="M400 280 L420 305" stroke="url(#componentFlow)" strokeWidth="2" strokeDasharray="4,4" opacity="0.7">
-            <animate attributeName="stroke-dashoffset" values="0;-8" dur="3s" begin="0.5s" repeatCount="indefinite" />
-          </path>
-        </g>
-        
-        {/* Browser Viewport */}
-        <g filter="url(#uiGlow)">
-          <rect x="50" y="350" width="120" height="30" rx="6" fill="none" stroke="url(#uiGradient)" strokeWidth="2" filter="url(#designShadow)">
-            <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite" />
-          </rect>
-          <text x="80" y="370" fill="#3b82f6" fontSize="11" fontFamily="Arial, sans-serif" fontWeight="500">DESKTOP VIEW</text>
-          
-          <rect x="430" y="350" width="120" height="30" rx="6" fill="none" stroke="url(#responsiveDesign)" strokeWidth="2" filter="url(#designShadow)">
-            <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="4s" begin="2s" repeatCount="indefinite" />
-          </rect>
-          <text x="465" y="370" fill="#8b5cf6" fontSize="11" fontFamily="Arial, sans-serif" fontWeight="500">MOBILE VIEW</text>
-        </g>
-        
-        {/* UI Interactions */}
-        <g filter="url(#uiGlow)">
-          {/* Animated UI element */}
-          <rect x="220" y="170" width="160" height="8" rx="4" fill="url(#componentFlow)" opacity="0.6">
-            <animate attributeName="width" values="160;180;160" dur="3s" repeatCount="indefinite" />
-          </rect>
-          <text x="225" y="190" fill="#10b981" fontSize="10" fontFamily="Arial, sans-serif">Progress Bar</text>
-          
-          <rect x="220" y="200" width="160" height="20" rx="4" fill="none" stroke="url(#uiGradient)" strokeWidth="1" opacity="0.8">
-            <animate attributeName="stroke-opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" />
-          </rect>
-          <text x="225" y="235" fill="#3b82f6" fontSize="10" fontFamily="Arial, sans-serif">Interactive Button</text>
-          
-          <rect x="220" y="245" width="160" height="15" rx="3" fill="url(#responsiveDesign)" opacity="0.4">
-            <animate attributeName="opacity" values="0.4;0.7;0.4" dur="4s" repeatCount="indefinite" />
-          </rect>
-          <text x="225" y="275" fill="#8b5cf6" fontSize="10" fontFamily="Arial, sans-serif">Form Input</text>
-          
-          {/* Performance metrics */}
-          <rect x="220" y="30" width="160" height="60" rx="6" fill="none" stroke="url(#componentFlow)" strokeWidth="2" filter="url(#designShadow)">
-            <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="5s" repeatCount="indefinite" />
-          </rect>
-          <text x="240" y="50" fill="#10b981" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">PERFORMANCE</text>
-          <text x="225" y="65" fill="#6b7280" fontSize="10" fontFamily="Arial, sans-serif">Load Time: 0.8s</text>
-          <text x="225" y="78" fill="#6b7280" fontSize="10" fontFamily="Arial, sans-serif">Bundle Size: 245KB</text>
-          
-          {/* Status indicator */}
-          <circle cx="365" cy="45" r="4" fill="#10b981" opacity="0.8">
-            <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" />
-          </circle>
-        </g>
-      </g>
+
+      {/* Ambient glow */}
+      <ellipse cx="230" cy="170" rx="200" ry="120" fill="rgba(243,102,55,0.07)">
+        <animate attributeName="rx" values="200;220;200" dur="5s" repeatCount="indefinite"/>
+      </ellipse>
+
+      {/* ── Main dashboard card ── */}
+      <rect x="30" y="20" width="400" height="300" rx="16" fill="url(#ab1-card)" filter="url(#ab1-shadow)"
+            stroke="rgba(255,255,255,0.06)" strokeWidth="1"/>
+
+      {/* Card header */}
+      <rect x="30" y="20" width="400" height="44" rx="16" fill="#131d35"/>
+      <rect x="30" y="44" width="400" height="4" fill="#131d35"/>
+      <circle cx="54" cy="42" r="6" fill="#ff5f57"/>
+      <circle cx="72" cy="42" r="6" fill="#febc2e"/>
+      <circle cx="90" cy="42" r="6" fill="#28c840"/>
+      <text x="230" y="47" textAnchor="middle" fontSize="11" fill="rgba(255,255,255,0.3)" fontFamily="monospace">developer-stats.sh</text>
+
+      {/* ── Stat cards row ── */}
+      {/* Card 1: Years */}
+      <rect x="48" y="82" width="96" height="68" rx="10" fill="rgba(243,102,55,0.08)" stroke="rgba(243,102,55,0.25)" strokeWidth="1"/>
+      <text x="96" y="108" textAnchor="middle" fontSize="22" fontWeight="700" fill="#F36637" fontFamily="monospace">3+</text>
+      <text x="96" y="124" textAnchor="middle" fontSize="9" fill="rgba(255,255,255,0.45)" fontFamily="sans-serif">Years Exp.</text>
+      <rect x="55" y="136" width="82" height="3" rx="1.5" fill="rgba(243,102,55,0.15)"/>
+      <rect x="55" y="136" width="55" height="3" rx="1.5" fill="url(#ab1-orange)">
+        <animate attributeName="width" values="0;55;55" dur="2s" fill="freeze"/>
+      </rect>
+
+      {/* Card 2: Projects */}
+      <rect x="158" y="82" width="96" height="68" rx="10" fill="rgba(14,251,216,0.06)" stroke="rgba(14,251,216,0.2)" strokeWidth="1"/>
+      <text x="206" y="108" textAnchor="middle" fontSize="22" fontWeight="700" fill="#0EFBD8" fontFamily="monospace">10+</text>
+      <text x="206" y="124" textAnchor="middle" fontSize="9" fill="rgba(255,255,255,0.45)" fontFamily="sans-serif">Projects</text>
+      <rect x="165" y="136" width="82" height="3" rx="1.5" fill="rgba(14,251,216,0.12)"/>
+      <rect x="165" y="136" width="68" height="3" rx="1.5" fill="url(#ab1-teal)">
+        <animate attributeName="width" values="0;68;68" dur="2.3s" fill="freeze"/>
+      </rect>
+
+      {/* Card 3: Tech */}
+      <rect x="268" y="82" width="96" height="68" rx="10" fill="rgba(168,85,247,0.07)" stroke="rgba(168,85,247,0.22)" strokeWidth="1"/>
+      <text x="316" y="108" textAnchor="middle" fontSize="22" fontWeight="700" fill="#a855f7" fontFamily="monospace">20+</text>
+      <text x="316" y="124" textAnchor="middle" fontSize="9" fill="rgba(255,255,255,0.45)" fontFamily="sans-serif">Technologies</text>
+      <rect x="275" y="136" width="82" height="3" rx="1.5" fill="rgba(168,85,247,0.12)"/>
+      <rect x="275" y="136" width="72" height="3" rx="1.5" fill="#a855f7">
+        <animate attributeName="width" values="0;72;72" dur="2.6s" fill="freeze"/>
+      </rect>
+
+      {/* ── Contribution graph ── */}
+      <text x="48" y="176" fontSize="10" fill="rgba(255,255,255,0.3)" fontFamily="monospace">contribution activity</text>
+      {/* Graph bars */}
+      {[
+        {x:48,  h:28, c:'rgba(243,102,55,0.7)'},
+        {x:66,  h:18, c:'rgba(243,102,55,0.4)'},
+        {x:84,  h:38, c:'rgba(243,102,55,0.8)'},
+        {x:102, h:24, c:'rgba(243,102,55,0.5)'},
+        {x:120, h:44, c:'rgba(243,102,55,0.9)'},
+        {x:138, h:16, c:'rgba(14,251,216,0.5)'},
+        {x:156, h:36, c:'rgba(14,251,216,0.7)'},
+        {x:174, h:48, c:'rgba(14,251,216,0.9)'},
+        {x:192, h:22, c:'rgba(14,251,216,0.5)'},
+        {x:210, h:40, c:'rgba(168,85,247,0.7)'},
+        {x:228, h:30, c:'rgba(168,85,247,0.5)'},
+        {x:246, h:52, c:'rgba(168,85,247,0.9)'},
+        {x:264, h:20, c:'rgba(243,102,55,0.4)'},
+        {x:282, h:44, c:'rgba(243,102,55,0.8)'},
+        {x:300, h:32, c:'rgba(14,251,216,0.6)'},
+        {x:318, h:56, c:'rgba(243,102,55,1.0)'},
+        {x:336, h:24, c:'rgba(14,251,216,0.5)'},
+        {x:354, h:46, c:'rgba(168,85,247,0.8)'},
+      ].map((b, i) => (
+        <rect key={i} x={b.x} y={230 - b.h} width="14" height={b.h} rx="3" fill={b.c}>
+          <animate attributeName="height" values={`0;${b.h}`} dur={`${0.4 + i * 0.07}s`} fill="freeze" begin={`${i * 0.04}s`}/>
+          <animate attributeName="y" values={`230;${230 - b.h}`} dur={`${0.4 + i * 0.07}s`} fill="freeze" begin={`${i * 0.04}s`}/>
+        </rect>
+      ))}
+
+      {/* Graph baseline */}
+      <line x1="48" y1="230" x2="370" y2="230" stroke="rgba(255,255,255,0.08)" strokeWidth="1"/>
+
+      {/* ── Terminal log line at bottom ── */}
+      <rect x="48" y="244" width="364" height="58" rx="8" fill="#0d1524"/>
+      <text x="60" y="262" fontSize="9.5" fill="rgba(14,251,216,0.8)" fontFamily="monospace">
+        $ git log --oneline
+      </text>
+      <text x="60" y="277" fontSize="9" fill="rgba(255,255,255,0.5)" fontFamily="monospace">
+        a3f21c8 feat: add React Native push notifications
+      </text>
+      <text x="60" y="291" fontSize="9" fill="rgba(255,255,255,0.35)" fontFamily="monospace">
+        9bd4e1a fix: MongoDB aggregation pipeline optimized
+      </text>
+      {/* Blinking cursor */}
+      <rect x="60" y="295" width="6" height="1" fill="rgba(14,251,216,0.9)">
+        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+      </rect>
+
+      {/* Floating dots */}
+      {[{x:420,y:60},{x:440,y:280},{x:10,y:200},{x:14,y:80}].map((d,i)=>(
+        <circle key={i} cx={d.x} cy={d.y} r="2.5" fill="rgba(243,102,55,0.5)">
+          <animate attributeName="opacity" values="0.3;1;0.3" dur={`${3+i}s`} repeatCount="indefinite"/>
+        </circle>
+      ))}
     </svg>
   </div>
 );

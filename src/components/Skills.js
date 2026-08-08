@@ -17,7 +17,6 @@ import vite from '../components/img/vite.png'
 import docker from '../components/img/docker.png'
 import redis from '../components/img/redis.png'
 import jira from '../components/img/jira.png'
-import aws from '../components/img/aws.png'
 import ec2 from '../components/img/ec2.png'
 import lambda from '../components/img/lambda.png'
 import s3 from '../components/img/s3.png'
@@ -27,6 +26,7 @@ import figma from '../components/img/figma.png'
 
 const POSTGRES_LOGO = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg'
 const TAILWIND_LOGO = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg'
+const REACT_NATIVE_LOGO = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/reactnative/reactnative-original.svg'
 
 const skillCategories = [
     {
@@ -39,7 +39,7 @@ const skillCategories = [
             { logo: java, title: 'JavaScript' },
             { logo: typescript, title: 'TypeScript' },
             { logo: react, title: 'React.js' },
-            { logo: react, title: 'React Native' },
+            { logo: REACT_NATIVE_LOGO, title: 'React Native' },
             { logo: nextjs, title: 'Next.js' },
             { logo: redux, title: 'Redux Toolkit' },
             { logo: boot, title: 'Bootstrap' },

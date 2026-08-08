@@ -1,7 +1,6 @@
 import React from 'react'
-import { TiCode} from "react-icons/ti";
-import { MdDevices,MdShoppingCart,MdOutlineAppRegistration } from "react-icons/md";
-import Aos from 'aos';
+import { TiCode } from "react-icons/ti";
+import { MdDevices, MdShoppingCart, MdOutlineAppRegistration } from "react-icons/md";
 
 const servicelist = [
     {

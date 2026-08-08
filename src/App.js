@@ -8,6 +8,7 @@ import Service from "./components/Service";
 import AOS from 'aos'
 import Skills from "./components/Skills";
 import Portfolio from "./components/Portfolio";
+import ScrollToTop from "./components/ScrollToTop";
 import 'aos/dist/aos.css';
 
 function App() {
@@ -30,10 +31,9 @@ function App() {
       <Service/>
       <About/>
       <Skills/>
-      {/* <Project/> */}
       <Portfolio/>
       <Contact/>
-      {/* <About/> */}
+      <ScrollToTop/>
     </div>
 
   );
