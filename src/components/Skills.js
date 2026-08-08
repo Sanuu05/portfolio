@@ -115,7 +115,7 @@ function Skills() {
                             </div>
                             <div className='skills-grid'>
                                 {category.skills.map((skill, skillIndex) => (
-                                    <div key={skillIndex} className='skill-card' data-aos="zoom-in" data-aos-duration="1000" data-aos-delay={skillIndex * 100}>
+                                    <div key={skillIndex} className='skill-card' data-aos="zoom-in" data-aos-duration="600" data-aos-delay={Math.min(skillIndex * 80, 400)}>
                                         <div className='skill-card-header'>
                                             <div className='skill-logo'>
                                                 <img src={skill.logo} alt={skill.title} />

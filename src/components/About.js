@@ -14,7 +14,7 @@ function About() {
                             data-aos="fade-up"
                             data-aos-duration="1000"
                         >
-                            about me <span className='accent'>.</span>
+                            Who I Am
                         </h2>
                     </div>
 

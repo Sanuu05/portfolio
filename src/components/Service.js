@@ -1,31 +1,32 @@
 import React from 'react'
 import { TiCode } from "react-icons/ti";
-import { MdDevices, MdShoppingCart, MdOutlineAppRegistration } from "react-icons/md";
+import { MdDevices, MdShoppingCart } from "react-icons/md";
+import { BsLightningChargeFill } from "react-icons/bs";
 
 const servicelist = [
     {
-        logo:<TiCode/>,
-        title:"Full-Stack Web Applications",
-        des:'Building enterprise-grade web applications with MERN stack. Specialized in POS systems, e-commerce platforms, and real-time applications. Technologies: React.js, Node.js, Express.js, MongoDB, Firebase, Redux, and modern JavaScript.',
-        highlights: ["MERN Stack", "POS Systems", "Real-time Apps", "Enterprise Grade"]
+        logo: <TiCode />,
+        title: "Full-Stack Web Applications",
+        des: 'Building enterprise-grade web applications with the MERN stack — React.js, Node.js, Express.js, and MongoDB. Specialized in admin dashboards, real-time data platforms, and scalable REST APIs.',
+        highlights: ["MERN Stack", "Admin Dashboards", "Real-time Apps", "Enterprise Grade"]
     },
     {
-        logo:<MdOutlineAppRegistration/>,
-        title:"React Native Mobile Apps",
-        des:'Developing high-performance cross-platform mobile applications with React Native. Single codebase for iOS and Android with native performance. Expertise in state management, API integration, and mobile-specific UI/UX patterns.',
-        highlights: ["Cross-platform", "Native Performance", "State Management", "API Integration"]
+        logo: <MdDevices />,
+        title: "React Native Mobile Apps",
+        des: 'Developing high-performance cross-platform mobile apps with React Native — single codebase, native feel on both iOS and Android. Expertise in offline sync, state management, and mobile-specific UX patterns.',
+        highlights: ["Cross-platform", "iOS & Android", "Offline Sync", "Native Performance"]
     },
     {
-        logo:<MdDevices/>,
-        title:"E-Commerce & Payment Systems",
-        des:'Creating secure, scalable e-commerce platforms with integrated payment gateways. Built full-featured online stores, POS systems, and inventory management solutions with Razorpay integration. Expert in cart management, order tracking, and admin dashboards.',
-        highlights: ["Secure Payments", "POS Systems", "Inventory Management", "Razorpay Integration"]
+        logo: <MdShoppingCart />,
+        title: "E-Commerce & Payment Systems",
+        des: 'Creating secure, scalable e-commerce platforms with integrated payment gateways (Razorpay, Stripe). Full-featured storefronts, inventory management, order tracking, and responsive admin dashboards.',
+        highlights: ["Razorpay & Stripe", "Inventory Management", "Order Tracking", "Secure Payments"]
     },
     {
-        logo:<MdShoppingCart/>,
-        title:"SaaS & Business Applications",
-        des:'Building scalable Software-as-a-Service applications for businesses. Experience with subscription management, user authentication, admin dashboards, and multi-tenant architectures. Focus on scalability and business logic.',
-        highlights: ["Subscription Management", "Admin Dashboards", "Multi-tenant", "Scalable Architecture"]
+        logo: <BsLightningChargeFill />,
+        title: "Real-time & API Development",
+        des: 'Building real-time systems with Socket.io, Firebase, and Pusher — live chat, push notifications, and event-driven architectures. Experienced in designing clean RESTful APIs and third-party integrations.',
+        highlights: ["Socket.io", "Firebase", "REST APIs", "Push Notifications"]
     }
 ]
 
@@ -40,7 +41,7 @@ function Service() {
                         Comprehensive development services tailored to meet your business needs and drive digital transformation
                     </p>
                 </div>
-                
+
                 <div className='service-grid'>
                     {servicelist?.map((service, index) => (
                         <div key={index} className='service-card' data-aos="fade-up" data-aos-duration="1000" data-aos-delay={index * 100}>
